@@ -1,5 +1,9 @@
 package com.avatrixxyt.minigame;
 
-public class Main {
+import java.util.Random;
+import java.util.Scanner; //lectura del teclado
+import com.avatrixxyt.util.*;
 
+public class Main {
+	
 }
