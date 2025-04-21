@@ -47,7 +47,17 @@
 
     <!-- Opcional: Plugins de construcción -->
     <build>
+    
         <plugins>
+        <!-- Plugin para ejecutar la clase principal -->
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.5.0</version>
+            <configuration>
+                <mainClass>com.avatrixxyt.minigame.Main</mainClass> <!-- Cambia esto por tu clase principal -->
+            </configuration>
+        </plugin>
             <!-- Plugin de compilación de Maven -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
