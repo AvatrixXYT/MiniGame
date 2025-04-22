@@ -6,7 +6,7 @@ import com.avatrixxyt.util.*;
 
 public class Main 
 {
-	public static void main(String[]args)
+	public static void main(String[]args) throws InterruptedException
 	{
 		boolean mdc;//While del menu de creditos
 		boolean wdtp;//While de la tabla de puntuacion
@@ -17,6 +17,8 @@ public class Main
 
 		Clean ex = new Clean();
 		Scanner tec = new Scanner(System.in);
+		TablaPuntuacion tabla = new TablaPuntuacion();//Establecer la tabla de puntuacion
+		
 		while(true)
 		{
 			ex.clear();//Limpiar pantalla
@@ -47,9 +49,7 @@ public class Main
 						}
 					}//Switch regresar creditos
 				}
-
 				break;
-			}//Swuitch menu case 2 Creditos
 			case "3":
 			{
 				wdtp=true;//Reinicia el valor del while
