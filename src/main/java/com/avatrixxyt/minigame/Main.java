@@ -27,20 +27,20 @@ public class Main
 			System.out.print("<: ");
 			op = tec.next();
 			GameUI.Salto();//Salto de linea
-			switch(op) {
+			switch(op)
+			{
 				case "1":
 				{
 					game.NumeroMagico();
 					break;
 				}
-				case "2":{
-
+				case "2":
+				{
+					game.JuegoMath();
+					break;
 				}
-				case "5": {
-					System.out.print("Hasta la proxima");
-					return;
-				}//Switch menu case 4 salir
-				case "3": {
+				case "3":
+				{
 					mdc = true;//Reinicia el valor del while
 					while (mdc) {
 						ex.clear();//Limpiar pantalla
@@ -55,42 +55,46 @@ public class Main
 							Thread.sleep(1000);//Tiempo en pausa 1 segundo
 						}
 					}//Switch regresar creditos
+				}//Switch menu case 4 salir
+				case "4":
+				{
+					wdtp=true;//Reinicia el valor del while
+					while(wdtp)
+					{
+						tabla.recargarDesdeArchivo();//Recarga archivo JSON de la tabla
+						ex.clear();//Limpiar pantalla
+						tabla.mostrarPuntuaciones();//Lee el archivo JSON para ver las puntuaciones
+						GameUI.Salto();//Salto de linea
+						GameUI.tablaDePuntuacion();//Menu de opciones de tabla de puntuacion
+						System.out.print("<:");
+						sdtdp = tec.next();
+						GameUI.Salto();//Salto de linia
+						switch(sdtdp)//Switch de tabla de puntuacion
+						{
+							case "1"://Case 1 salir de tabla de puntuacion
+							{
+								wdtp=false;//Valor de salida
+								break;
+							}//Case 1 salir de tabla de puntuacion
+							case "2"://Case 2 borrar datos de tabla de puntuacion
+							{
+								PermisosAdmin.BorrarTabla();
+								Thread.sleep(1000);//Tiempo de pausa 1 segundo
+							}//Case 2 borrar datos de tabla de puntuacion
+							break;
+							default://Default opcion invalida
+							{
+								System.out.println("Opcion invalida");
+								Thread.sleep(1000);//Tiempo de pausa 1 segundo
+							}//Default opcion invalida
+						}
+					}//Menu de tabla de puntuacion
 				}
 				break;
-			case "4":
+			case "5":
 			{
-				wdtp=true;//Reinicia el valor del while
-				while(wdtp)
-				{
-					tabla.recargarDesdeArchivo();//Recarga archivo JSON de la tabla
-					ex.clear();//Limpiar pantalla
-					tabla.mostrarPuntuaciones();//Lee el archivo JSON para ver las puntuaciones
-					GameUI.Salto();//Salto de linea
-					GameUI.tablaDePuntuacion();//Menu de opciones de tabla de puntuacion
-					System.out.print("<:");
-					sdtdp = tec.next();
-					GameUI.Salto();//Salto de linia
-					switch(sdtdp)//Switch de tabla de puntuacion
-					{
-					case "1"://Case 1 salir de tabla de puntuacion
-					{
-						wdtp=false;//Valor de salida
-						break;
-					}//Case 1 salir de tabla de puntuacion
-					case "2"://Case 2 borrar datos de tabla de puntuacion
-					{
-						PermisosAdmin.BorrarTabla();
-						Thread.sleep(1000);//Tiempo de pausa 1 segundo
-					}//Case 2 borrar datos de tabla de puntuacion
-					break;
-					default://Default opcion invalida
-					{
-						System.out.println("Opcion invalida");
-						Thread.sleep(1000);//Tiempo de pausa 1 segundo
-					}//Default opcion invalida
-					}
-				}//Menu de tabla de puntuacion
-				break;
+				System.out.print("Hasta la proxima");
+				return;
 			}//Switch case 3 tabla de puntuacion
 			default ://Default opcion invalida
 			{

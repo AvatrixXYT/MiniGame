@@ -100,4 +100,6 @@ public class GameUI
 	{
 		System.out.println("\n\n");
 	}
+	//game math
+
 }

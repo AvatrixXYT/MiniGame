@@ -79,9 +79,8 @@ public class ModosGame {
                 break;
             } else {
                 if (logic.resultOP == 2) {
-                    //logic.Pruebas(xn);//activar para hacer pruebas
-                    logic.GameOperation(xn, nm);//Compurueba si ganste o no
-                    if (logic.atinNum)//Comprueva si le atinaste o no
+                    //if (logic.Pruebas(xn))//activar para hacer pruebas
+                    if (logic.GameOperation(xn, nm))//Comprueva si le atinaste o no
                     {
                         jov = true;//Reinicia el valor del while
                         while (jov) {
@@ -129,8 +128,7 @@ public class ModosGame {
                         p2 = grn.nextInt(0, (ngma / 2));//Genera el otro numero aleatorio para la pista
                         logic.pista(p1, p2, ngma, nm);//Te da una pista totalmente aleatoria
                         vidas = vidas - 1;//Te quita una vida
-                        logic.Perder(vidas);//operacion para saber si te quedan vidas
-                        if (logic.perder)//Si te quedan vidas o no
+                        if (logic.Perder(vidas))//Si te quedan vidas o no
                         {
                             jov = true;//Reinicia el valor del while
                             while (jov) {
@@ -177,6 +175,5 @@ public class ModosGame {
     }
     public void JuegoMath()
     {
-
     }
 }
