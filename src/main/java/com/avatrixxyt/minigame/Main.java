@@ -25,7 +25,7 @@ public class Main
 		boolean wdtp;//While de la tabla de puntuacion
 		boolean men;//While del menu principal
 		boolean jov;//While para jugar otra vez
-		boolean jugando;//While el juego
+		boolean jugando = true;//While el juego
 		boolean selDificultad;//While de la dificultad
 		//Variables de cadenas de texto String
 		String sdtdp;//Switch opciones de la tabla de puntucion
@@ -57,19 +57,28 @@ public class Main
 					dificultad = tec.next();
 					switch(dificultad)
 					{
+						case "0"://Regresar
+						{
+							selDificultad = false;//Salir del menu de dificultad
+							jugando=false;//Reinicia el valor del while
+							break;
+						}
 					case "1"://Facil
 					{
 						ngma = 10;
+						jugando=true;//Reinicia el valor del while
 						break;
 					}
 					case "2"://Medio
 					{
 						ngma = 25;
+						jugando=true;//Reinicia el valor del while
 						break;
 					}
 					case "3"://Dificil
 					{
 						ngma = 50;
+						jugando=true;//Reinicia el valor del while
 						break;
 					}
 					default://Opcion invalida
@@ -81,7 +90,6 @@ public class Main
 				System.out.println("Que empieze el Juego");
 				nm = grn.nextInt(ngmi,ngma);//Genera el primer numero aleatorio
 				vidas = logic.vidasInicial;//Te da las vidas para iniciar
-				jugando=true;//Reinicia el valor del while
 				while(jugando==true)
 				{	
 					GameUI.valoresDelJuego(vidas, logic.puntos, logic.dificultad);//Valores del jugador

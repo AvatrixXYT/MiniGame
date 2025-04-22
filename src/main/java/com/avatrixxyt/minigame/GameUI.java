@@ -49,6 +49,8 @@ public class GameUI
 		System.out.println("|     2)Medio 1-25        |");
 		System.out.println("|     3)Dificil 1-50      |");
 		System.out.println("|                         |");
+		System.out.println("|     0)Regresar          |");
+		System.out.println("|                         |");
 		System.out.println("---------------------------");
 	}
 	//Pista menor
