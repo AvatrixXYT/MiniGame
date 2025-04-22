@@ -95,4 +95,8 @@ public class GameUI
 		System.out.println("|             El numero magico era: "+num+"                   |");
 		System.out.println("---------------------------------------------------------");
 	}
+	public static void Salto()
+	{
+		System.out.println("\n\n");
+	}
 }

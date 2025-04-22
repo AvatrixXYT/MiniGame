@@ -13,7 +13,7 @@ public class Main
 		LogicGame logic = new LogicGame();//Establecer la logica del juego
 		TablaPuntuacion tabla = new TablaPuntuacion();//Establecer la tabla de puntuacion
 		Random grn = new Random(System.currentTimeMillis()); //variable para el numero aleatorio
-		int nm = 0;//Inicio del numero magico
+		int nm;//Inicio del numero magico
 		int xn;//Numero x del usuario
 		int vidas;//Numero de Vidas
 		int ngmi = 1;//Numero Minimo a generar
@@ -23,7 +23,6 @@ public class Main
 		//Variables booleanas boolean
 		boolean mdc;//While del menu de creditos
 		boolean wdtp;//While de la tabla de puntuacion
-		boolean men;//While del menu principal
 		boolean jov;//While para jugar otra vez
 		boolean jugando = true;//While el juego
 		boolean selDificultad;//While de la dificultad
@@ -35,24 +34,24 @@ public class Main
 		String reinJuego;//Switch para reiniciar el juego
 		String dificultad;//Switch para seleccionar dificultad
 		//Variables usadas
-		men=true;
-		while(men==true)
+		while(true)
 		{
 			ex.clear();//Limpiar pantalla
 			GameUI.menu();//Muestra el menu
 			System.out.print("<: ");
 			op = tec.next();
-			System.lineSeparator();//Salto de linea
+			GameUI.Salto();//Salto de linea
 			switch(op)
 			{
-			case "1":{
+			case "1":
+			{
 				selDificultad = true;//Reinicia el valor del while
-				while(selDificultad == true)
+				while(selDificultad)
 				{
 					ex.clear();//Limpiar pantalla
 					System.out.println("Seleciona la Dificultad");
 					GameUI.tablaDeDificultad();//Muesta la tabla de dificultad
-					System.lineSeparator();//Salto de linea
+					GameUI.Salto();//Salto de linea
 					System.out.print("<:");
 					dificultad = tec.next();
 					switch(dificultad)
@@ -90,10 +89,10 @@ public class Main
 				System.out.println("Que empieze el Juego");
 				nm = grn.nextInt(ngmi,ngma);//Genera el primer numero aleatorio
 				vidas = logic.vidasInicial;//Te da las vidas para iniciar
-				while(jugando==true)
+				while(jugando)
 				{	
 					GameUI.valoresDelJuego(vidas, logic.puntos, logic.dificultad);//Valores del jugador
-					System.lineSeparator();//Salto de linea
+					GameUI.Salto();//Salto de linea
 					System.out.println("Introduce un numero aleatorio entre "+ ngmi + " y " + ngma);
 					System.out.print("<: ");
 					xn = tec.nextInt();
@@ -109,17 +108,17 @@ public class Main
 						{
 							//logic.Pruebas(xn);//activar para hacer pruebas
 							logic.GameOperation(xn,nm);//Compurueba si ganste o no
-							if(logic.atinNum==true)//Comprueva si le atinaste o no
+							if(logic.atinNum)//Comprueva si le atinaste o no
 							{
 								jov = true;//Reinicia el valor del while
-								while(jov == true)
+								while(jov)
 								{
 									ex.clear();//Limpiar pantalla
 									logic.CalcularPuntos(vidas, ngma);//Calcula los puntos que tienes
 									GameUI.valoresDelJuego(vidas, logic.puntos, logic.dificultad);//Valores del jugador
-									System.lineSeparator();//Salto de linea
+									GameUI.Salto();//Salto de linea
 									GameUI.ganaste();//Pantalla de ganar
-									System.lineSeparator();//Salto de linea
+									GameUI.Salto();//Salto de linea
 									GameUI.jugarDeNuevo();//Opciones para jugar de nuevo
 									System.out.print("<:");
 									reinJuego = tec.next();
@@ -130,7 +129,6 @@ public class Main
 										ex.clear();//Limpiar pantalla
 										nm = grn.nextInt(ngmi,ngma);//Genera un nuevo numero aleatorio
 										vidas=vidas+5;//Aumenta las vidas dandote  5 mas
-										jugando = true;//Seguir del juego
 										jov = false;//Salir de las opciones
 										break;
 									}
@@ -157,13 +155,13 @@ public class Main
 							{
 								ex.clear();//Limpiar pantalla
 								System.out.println("Numero incorecto");
-								System.lineSeparator();//Salto de linea
+								GameUI.Salto();//Salto de linea
 								p1 = grn.nextInt(0,(ngma/2));//Genera un numero aleatorio para la pista
 								p2 = grn.nextInt(0,(ngma/2));//Genera el otro numero aleatorio para la pista
 								logic.pista(p1, p2, ngma, nm);//Te da una pista totalmente aleatoria
 								vidas=vidas-1;//Te quita una vida
 								logic.Perder(vidas);//operacion para saber si te quedan vidas
-								if(logic.perder == true)//Si te quedan vidas o no
+								if(logic.perder)//Si te quedan vidas o no
 								{
 									jov = true;//Reinicia el valor del while
 									while(jov)
@@ -171,9 +169,9 @@ public class Main
 										ex.clear();//Limpiar pantalla
 										logic.CalcularPuntos(vidas, ngma);//Calcula los puntos que tienes
 										GameUI.valoresDelJuego(vidas, logic.puntos, logic.dificultad);//Valores del jugador
-										System.lineSeparator();//Salto de linea
+										GameUI.Salto();//Salto de linea
 										GameUI.perdiste(nm);//Pantalla de perder
-										System.lineSeparator();//Salto de linea
+										GameUI.Salto();//Salto de linea
 										GameUI.jugarDeNuevo();//Opciones de jugar de nuuevo
 										System.out.print("<:");
 										reinJuego = tec.next();
@@ -184,7 +182,6 @@ public class Main
 											ex.clear();//Limpiar pantalla
 											nm = grn.nextInt(ngmi,ngma);//Genera un nuevo numero aleatorio
 											vidas=vidas+logic.vidasInicial;//Reinicia las vidas
-											jugando = true;//Seguir jugando
 											jov = false;//Salir de las opciones
 											break;
 										}
@@ -202,10 +199,6 @@ public class Main
 										}//Switch para seguir jugando
 									}//While para seguir jugando
 								}//Te quedaste sin vidas
-								else
-								{
-									jugando = true;//Valor para seguir jugando
-								}//Si tienes vida seguir jugando
 							}//Else numero inccorecto
 						}//If comprobacion del numero mayor y menor
 						else//Numero invalido
@@ -219,48 +212,41 @@ public class Main
 				break;
 			}//Switch menu case 1 Jugar
 			case "4":
-			{	
+			{
 				System.out.print("Hasta la proxima");
 				return;	
 			}//Switch menu case 4 salir
 			case "2":
 			{
 				mdc=true;//Reinicia el valor del while
-				while(mdc==true)
+				while(mdc)
 				{
 					ex.clear();//Limpiar pantalla
 					GameUI.credits();//Muesta los creditos
 					System.out.print("<:");
 					swCre = tec.next();
-					switch(swCre)
-					{
-					case "1"://Salir del menu de creditos
-					{
-						mdc=false;//Valor para salir
-						break;
-					}//Switch creditos case 1 regresar
-					default://Default opcion invalida
-					{
-						System.out.println("Opcion invalida");
-						Thread.sleep(1000);//Tiempo en pausa 1 segundo
-					}//Swuitch creditos opcion invalida
-					}//Switch regresar creditos
-				}
+                    if (swCre.equals("1")) {//Salir del menu de creditos
+                        mdc = false;//Valor para salir
+                    } else {
+                        System.out.println("Opcion invalida");
+                        Thread.sleep(1000);//Tiempo en pausa 1 segundo
+                    }//Switch regresar creditos
+                }
 				break;
 			}//Swuitch menu case 2 Creditos
 			case "3":
 			{
 				wdtp=true;//Reinicia el valor del while
-				while(wdtp==true)
+				while(wdtp)
 				{
 					tabla.recargarDesdeArchivo();//Recarga archivo JSON de la tabla
 					ex.clear();//Limpiar pantalla
 					tabla.mostrarPuntuaciones();//Lee el archivo JSON para ver las puntuaciones
-					System.lineSeparator();//Salto de linea
+					GameUI.Salto();//Salto de linea
 					GameUI.tablaDePuntuacion();//Menu de opciones de tabla de puntuacion
 					System.out.print("<:");
 					sdtdp = tec.next();
-					System.lineSeparator();//Salto de linia
+					GameUI.Salto();//Salto de linia
 					switch(sdtdp)//Switch de tabla de puntuacion
 					{
 					case "1"://Case 1 salir de tabla de puntuacion
