@@ -10,9 +10,10 @@ public class GameUI
 		System.out.println("|   Bienvenido al Juego   |");
 		System.out.println("|                         |");
 		System.out.println("|        1)Empezar        |");
-		System.out.println("|        2)Creditos       |");
-		System.out.println("|  3)Tabla de puntuacion  |");
-		System.out.println("|         4)Salir         |");
+		System.out.println("|        2)Infinito        |");
+		System.out.println("|        3)Creditos       |");
+		System.out.println("|  4)Tabla de puntuacion  |");
+		System.out.println("|         5)Salir         |");
 		System.out.println("|                         |");
 		System.out.println("---------------------------");
 	}

@@ -18,6 +18,7 @@ public class Main
 		Clean ex = new Clean();
 		Scanner tec = new Scanner(System.in);
 		TablaPuntuacion tabla = new TablaPuntuacion();//Establecer la tabla de puntuacion
+		ModosGame game = new ModosGame();//Establecer el modo de juego
 		
 		while(true)
 		{
@@ -27,13 +28,19 @@ public class Main
 			op = tec.next();
 			GameUI.Salto();//Salto de linea
 			switch(op) {
-				case "1": {
+				case "1":
+				{
+					game.NumeroMagico();
+					break;
 				}
-				case "4": {
+				case "2":{
+
+				}
+				case "5": {
 					System.out.print("Hasta la proxima");
 					return;
 				}//Switch menu case 4 salir
-				case "2": {
+				case "3": {
 					mdc = true;//Reinicia el valor del while
 					while (mdc) {
 						ex.clear();//Limpiar pantalla
@@ -50,7 +57,7 @@ public class Main
 					}//Switch regresar creditos
 				}
 				break;
-			case "3":
+			case "4":
 			{
 				wdtp=true;//Reinicia el valor del while
 				while(wdtp)

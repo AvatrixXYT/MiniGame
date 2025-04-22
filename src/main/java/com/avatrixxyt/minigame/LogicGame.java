@@ -1,17 +1,19 @@
 package com.avatrixxyt.minigame;
 
-public class LogicGame 
+public class LogicGame
 {
 	TablaPuntuacion tabla = new TablaPuntuacion();//Lectura para opciones de tala
 	
 	private int numMin;//Valor minimo
 	private int numMax;//Valor maximo
-	private int numXU;//Valor del numero dada por el jugador
+	private int numXU;//Valor del número dada por el jugador
 	private int rando;//Numero random
 	private int vidas;//Vidas del jugador
 	private int dificultadPuntos;//Los puntos por dificultad
 	private int p1;//Primer Parametro para la pista
 	private int p2;//Segundo parametro para la pista
+
+	private int cero = 0;
 	
 	private String jugador;//Nombre del jugador
 	
@@ -19,35 +21,27 @@ public class LogicGame
 	
 	public int vidasInicial;//Vidas al iniciar
 	public int puntos;//Puntos ganados
-	public int resultOP;//Resultado cuando el numero esta dentro de lo permitido
+	public int resultOP;//Resultado cuando el número está dentro de lo permitido
 	
 	public boolean perder = false;//Valor cunado pierdes
 	public boolean atinNum;//Valor si le atinas al numero
-	
+	public boolean salir;
+
     public void ComMinMax(int min, int max, int num)//Operacion para saber si es un numero valido
-    {
-    	this.numMin = min;//Valor minimo
-    	this.numMax = max;//Valor maximo
-    	this.numXU = num;//Numero dado por el usuario
-    	
-    	int pr = numXU;//Inicia una variable con numero del usuario
-    	int se = numMax;//Inicia una variable con el valor maximo
-    	int te = numMin;//Inicia una variable con el valor minimo
-    	if(pr == 0)//Opcion de salir
-    	{
-    		resultOP = 1;
-    	}
-    	else
-    	{
-    		if(pr > te-1 && pr<se+1)//Si es mayor que y Menor que
-    		{
-    			resultOP = 2;//Es un valor valido
-    		}
-    		else//Si es invalido
-    		{
-    			resultOP = 3;//Es un valor invalido
-    		}
-    	}
+	{
+		int nume = num;
+    	if (nume == 0)
+		{
+			salir = true;
+		}
+		else if(num > min-1 && num<max+1)//Si es mayor que y Menor que
+		{
+			resultOP = 2;//Es un valor válido
+		}
+		else//Si es invalido
+		{
+			resultOP = 3;//Es un valor inválido
+		}
     }
         
     public void GameOperation(int NumeroUsuario, int NumeroRandom)//Checa si ganaste o no
@@ -55,8 +49,8 @@ public class LogicGame
     	this.numXU = NumeroUsuario;//Le la variable del numero del usuario
     	this.rando = NumeroRandom;//Le la variable con el numero random
     	
-    	int num = numXU;//Establese una variable con el numero de usuario
-    	int ranNum = rando;//Establese una variable con el numero aleatorio
+    	int num = numXU;//Establese una variable con el número de usuario
+    	int ranNum = rando;//Establese una variable con el número aleatorio
     	if (num==ranNum)//Si los numero son iguales
     	{
     		atinNum = true;//Ganaste
@@ -139,18 +133,18 @@ public class LogicGame
     	this.dificultadPuntos = Dificultad;//Lee la dificultad seleccionada
     	this.rando = NumeroRandom;//Lee el numero random
     	
-    	int pp = p1;//Establece una variable con el perimetro 1
-    	int sp = p2;//Establece una variable con el perimetro 2
+    	int pp = p1;//Establece una variable con el perímetro 1
+    	int sp = p2;//Establece una variable con el perímetro 2
     	int dt = dificultadPuntos;//Establece una variable cpn la dificultad
-    	int nr = rando;//Establece una variale con el numero random
+    	int nr = rando;//Establece una, variale con el número random
     	
     	if(pp == sp)//Si los parametros son iguales
     	{
     		if(dt==10)//Si la dificultad es facil
     		{
-    			if(nr <= 5)//Si el numero aleatorio es menor que 5
+    			if(nr <= 5)//Si el número aleatorio es menor que 5
     			{GameUI.menor(5);}//te da una pista de que es menor
-    			else//Si el numero aleatorio es mayor que 5
+    			else//Si el número aleatorio es mayor que 5
     			{GameUI.mayor(5);}//te da una pista de que es mayor
     		}
     		else//Si la dificultad no es facil
@@ -159,7 +153,7 @@ public class LogicGame
     			{
     				if(nr <= 13)//Si el numeor aleatorio es mayor que 13
         			{GameUI.menor(13);}//te da una pista de que es menor
-        			else//Si el numero aleatorio es mayor que 13
+        			else//Si el número aleatorio es mayor que 13
         			{GameUI.mayor(13);}//te da una pista de que es mayor
     			}
     			else//Si la dificultad no es media
@@ -181,17 +175,12 @@ public class LogicGame
     	}
     	else//Si los parametros no coinciden
     	{
-    		return;//El programa sige con normalidad
     	}
     }
-    
     public void Pruebas(int NumeroUsuario)//Activar para realisar pruebas
     {
-    	this.numXU = NumeroUsuario;//Lee el numero dado por el usuario
-    	
-    	int nomber = numXU;//Establece una variable con el numero del usuario
-    	int ranNum = 23;//Establece el numero magico como 23
-    	if (nomber==ranNum)//Compara los numero si son iguales
+    	int ranNum = 23;//Establece el número magico como 23
+    	if (NomberUsuario==ranNum)//Compara los numero si son iguales
     	{
     		atinNum = true;//Ganaste
     	}

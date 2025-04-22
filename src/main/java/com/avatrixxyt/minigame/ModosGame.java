@@ -9,7 +9,6 @@ public class ModosGame {
     Clean ex = new Clean();
     Scanner tec = new Scanner(System.in);
     LogicGame logic = new LogicGame();//Establecer la logica del juego
-    TablaPuntuacion tabla = new TablaPuntuacion();//Establecer la tabla de puntuacion
     Random grn = new Random(System.currentTimeMillis()); //variable para el numero aleatorio
 
     public void NumeroMagico() throws InterruptedException
@@ -18,7 +17,7 @@ public class ModosGame {
         int xn;//Numero x del usuario
         int vidas;//Numero de Vidas
         int ngmi = 1;//Numero Minimo a generar
-        int ngma = 50;//Numero Maximo a generar
+        int ngma = 50;//Número Maximo a generar
         int p1;//Perimetro 1 para la pista
         int p2;//Perimetro 2 para la pista
 
@@ -48,19 +47,15 @@ public class ModosGame {
                 case "1"://Facil
                 {
                     ngma = 10;
-                    jugando = true;//Reinicia el valor del while
                     break;
                 }
                 case "2"://Medio
                 {
                     ngma = 25;
-                    jugando = true;//Reinicia el valor del while
                     break;
                 }
                 case "3"://Dificil
                 {
-                    ngma = 50;
-                    jugando = true;//Reinicia el valor del while
                     break;
                 }
                 default://Opcion invalida
@@ -100,11 +95,11 @@ public class ModosGame {
                             System.out.print("<:");
                             reinJuego = tec.next();
                             switch (reinJuego) {
-                                case "1"://Seguir jugando para ganar mas puntos
+                                case "1"://Seguir jugando para ganar más puntos
                                 {
                                     ex.clear();//Limpiar pantalla
                                     nm = grn.nextInt(ngmi, ngma);//Genera un nuevo numero aleatorio
-                                    vidas = vidas + 5;//Aumenta las vidas dandote  5 mas
+                                    vidas = vidas + 5;//Aumenta las vidas
                                     jov = false;//Salir de las opciones
                                     break;
                                 }
@@ -115,9 +110,7 @@ public class ModosGame {
                                     System.out.print("<:");
                                     jugador = tec.next();
                                     logic.GuardarPuntuacion(jugador);//Guarda puntuacion en el JSON
-                                    jugando = false;//Salir del juego
-                                    jov = false;//Salir de las opciones
-                                    break;
+                                    return;
                                 }//Caso 2 salir del juego y guardar puntuacion
                                 default://Default opcion invalida
                                 {
@@ -161,9 +154,7 @@ public class ModosGame {
                                     }
                                     case "2"://Salir por perder todas las vias
                                     {
-                                        jugando = false;//Salir del juego
-                                        jov = false;//Salir de las opcioneas para reiniciar
-                                        break;
+                                        return;
                                     }
                                     default://Opcion invalida
                                     {
@@ -174,7 +165,7 @@ public class ModosGame {
                             }//While para seguir jugando
                         }//Te quedaste sin vidas
                     }//Else numero inccorecto
-                }//If comprobacion del numero mayor y menor
+                }//If comprobacion del número mayor y menor
                 else//Numero invalido
                 {
                     System.out.println("Numero Invalido");
