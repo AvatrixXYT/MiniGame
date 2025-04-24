@@ -130,4 +130,16 @@ public class GameUI
 		System.out.println("|                        0)Salir                        |");
 		System.out.println("---------------------------------------------------------");
 	}
+	public static void gameMath(int num1, int num2, String op) {
+		System.out.println("_________________________jugando_________________________");
+		System.out.println("| Operacion: "+num1+" "+op+" "+num2+" = ? |");
+		System.out.println("|                        0)Salir                        |");
+		System.out.println("---------------------------------------------------------");
+	}
+	public static void perdisteMath(int num) {
+		System.out.println("_________________________________________________________");
+		System.out.println("|                        Perdiste                       |");
+		System.out.println("|                 Ganaste "+num+" puntos                |");
+		System.out.println("---------------------------------------------------------");
+	}
 }

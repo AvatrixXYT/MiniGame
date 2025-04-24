@@ -8,11 +8,11 @@ import java.util.Scanner;
 public class ModosGame {
     Clean ex = new Clean();
     Scanner tec = new Scanner(System.in);
-    LogicGame logic = new LogicGame();//Establecer la logica del juego
     Random grn = new Random(System.currentTimeMillis()); //variable para el numero aleatorio
 
     public void NumeroMagico() throws InterruptedException
     {
+        LogicGame logic = new LogicGame();//Establecer la logica del juego
         int nm;//Inicio del numero magico
         int xn;//Numero x del usuario
         int vidas;//Numero de Vidas
@@ -175,14 +175,17 @@ public class ModosGame {
     }
     public void JuegoMath() throws InterruptedException
     {
+        LogicGameMath logic = new LogicGameMath();//Establecer la logica del juego
         String menuMath;//Menu de opciones
         String instrucionesGame;//Menu de instrucciones
+        TablaPuntuacionMath tablaMath = new TablaPuntuacionMath();
 
-        boolean gameCae;
+        int respuesta;//Respuesta del usuario
+
+        boolean jugando;
         boolean menuInstruc;
 
-        gameCae = true;
-        while (gameCae)
+        while (true)
         {
             Clean ex = new Clean();
             GameUI.menuGameMath();
@@ -192,7 +195,33 @@ public class ModosGame {
                 case "1": {
                     ex.clear();
                     System.out.println("Que empieze el juego");
-
+                    jugando = true;
+                    while (jugando)
+                    {
+                        GameUI.playerStarus(logic.puntos);
+                        logic.CalcularDificultad();
+                        int num1 = grn.nextInt(1, logic.dificultad); //Genera un numero aleatorio entre 1 y 10
+                        int num2 = grn.nextInt(1, logic.dificultad); //Genera un numero aleatorio entre 1 y 10
+                        logic.GenOperation(num1, num2);
+                        System.out.print("<:");
+                        respuesta = tec.nextInt();
+                        logic.InGame(respuesta);
+                        if (logic.SalirDelJuego)
+                        {
+                            jugando = false;
+                            break;
+                        }
+                        if (logic.perdiste)
+                        {
+                            ex.clear();
+                            System.out.println("Ingresa tu nombre");
+                            System.out.print("<:");
+                            String nombre = tec.next();
+                            tablaMath.agregarPuntajeMath(nombre, logic.puntos);
+                            logic.perdiste = false;
+                            break;
+                        }
+                    }
                 }
                 case "2": {
                     menuInstruc = true;

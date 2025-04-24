@@ -5,6 +5,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TablaPuntuacionMath {
     private List<Puntaje> puntajesMath; // Lista que almacena las puntuaciones de matemáticas
@@ -33,7 +35,7 @@ public class TablaPuntuacionMath {
         try (FileWriter writer = new FileWriter(ARCHIVO_JSON_MATH)) {
             gson.toJson(puntajesMath, writer); // Escribe los puntajes de matemáticas en el archivo JSON
         } catch (IOException e) {
-            e.printStackTrace(); // Muestra un error si ocurre
+            Logger.getLogger(TablaPuntuacionMath.class.getName()).log(Level.SEVERE, "Error al guardar las puntuaciones de matemáticas", e); // Muestra un error si ocurre
         }
     }
 
@@ -62,7 +64,7 @@ public class TablaPuntuacionMath {
         try (FileWriter writer = new FileWriter(ARCHIVO_JSON_MATH)) {
             writer.write("[]"); // Escribe un array vacío en el archivo
         } catch (IOException e) {
-            e.printStackTrace(); // Muestra un error si ocurre
+            Logger.getLogger(TablaPuntuacionMath.class.getName()).log(Level.SEVERE, "Error al guardar las puntuaciones de matemáticas", e); // Muestra un error si ocurre
         }
     }
 

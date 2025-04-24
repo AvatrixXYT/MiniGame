@@ -5,6 +5,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TablaPuntuacion 
 {
@@ -41,7 +43,7 @@ public class TablaPuntuacion
             gson.toJson(puntajes, writer);//Escribe los puntajes
         } catch (IOException e)
         {
-            e.printStackTrace();//Si no se pudo da error
+            Logger.getLogger(TablaPuntuacionMath.class.getName()).log(Level.SEVERE, "Error al guardar las puntuaciones de matemáticas", e);
         }
     }
 
@@ -77,7 +79,7 @@ public class TablaPuntuacion
             writer.write("[]");  // Escribe un array JSON vacío
         } catch (IOException e)
         {
-            e.printStackTrace();
+            Logger.getLogger(TablaPuntuacionMath.class.getName()).log(Level.SEVERE, "Error al guardar las puntuaciones de matemáticas", e);
         }
         System.out.println("✅ Tabla de puntuaciones reiniciada.");
     }

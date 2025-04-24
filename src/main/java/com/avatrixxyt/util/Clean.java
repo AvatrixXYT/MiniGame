@@ -1,6 +1,11 @@
 package com.avatrixxyt.util;
 
-public class Clean 
+import com.avatrixxyt.minigame.TablaPuntuacionMath;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class Clean
 {
 	public void clear()
 	{
@@ -18,7 +23,7 @@ public class Clean
 		}
 		catch (final Exception e)//Si no tdetecta tu sistema
 		{
-		      e.printStackTrace();//Error 
+			Logger.getLogger(TablaPuntuacionMath.class.getName()).log(Level.SEVERE, "Error al guardar las puntuaciones de matemáticas", e);
 		}
 	}
 }
