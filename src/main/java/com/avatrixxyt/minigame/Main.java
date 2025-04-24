@@ -15,6 +15,9 @@ public class Main
 		String swCre;//Switch para salir de los creditos
 		String op;//Switch del menu principal
 
+		boolean tipoTabla;
+		boolean borrarTabla = true;//Variable para borrar tabla
+
 		Clean ex = new Clean();
 		Scanner tec = new Scanner(System.in);
 		TablaPuntuacion tabla = new TablaPuntuacion();//Establecer la tabla de puntuacion
@@ -59,14 +62,20 @@ public class Main
 				}//Switch menu case 4 salir
 				case "4":
 				{
+					ex.clear();//Limpiar pantalla
+					tipoTabla = true;//Establece la tabla de puntuacion
 					wdtp=true;//Reinicia el valor del while
 					while(wdtp)
 					{
+						ex.clear();
 						tabla.recargarDesdeArchivo();//Recarga archivo JSON de la tabla
-						ex.clear();//Limpiar pantalla
-						tabla.mostrarPuntuaciones();//Lee el archivo JSON para ver las puntuaciones
-						GameUI.Salto();//Salto de linea
-						GameUI.tablaDePuntuacion();//Menu de opciones de tabla de puntuacion
+						tablaMath.recargarDesdeArchivoMath();
+						if (tipoTabla) {
+							tabla.mostrarPuntuaciones();
+						} else if (tipoTabla == false) {
+							tablaMath.mostrarPuntuacionesMath();
+						}
+						GameUI.tablaDePuntuacion();
 						System.out.print("<:");
 						sdtdp = tec.next();
 						GameUI.Salto();//Salto de linia
@@ -77,10 +86,27 @@ public class Main
 								wdtp=false;//Valor de salida
 								break;
 							}//Case 1 salir de tabla de puntuacion
-							case "2"://Case 2 borrar datos de tabla de puntuacion
+							case "2":
 							{
-								PermisosAdmin.BorrarTabla();
-								Thread.sleep(1000);//Tiempo de pausa 1 segundo
+								if (tipoTabla) {
+									tipoTabla = false;
+									borrarTabla = true;
+								} else if (tipoTabla == false) {
+									tipoTabla = true;
+									borrarTabla = false;
+								}
+								ex.clear();
+								break;
+							}
+							case "3"://Case 2 borrar datos de tabla de puntuacion
+							{
+								if (borrarTabla) {
+									PermisosAdmin.BorrarTabla();
+									Thread.sleep(1000);//Tiempo de pausa 1 segundo
+								} else if (borrarTabla == false) {
+									PermisosAdmin.BorrarTablaMath();
+									Thread.sleep(1000);
+								}
 							}//Case 2 borrar datos de tabla de puntuacion
 							break;
 							default://Default opcion invalida

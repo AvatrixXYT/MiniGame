@@ -188,6 +188,7 @@ public class ModosGame {
         while (true)
         {
             Clean ex = new Clean();
+            ex.clear();
             GameUI.menuGameMath();
             System.out.print("<:");
             menuMath = tec.next();
@@ -202,30 +203,38 @@ public class ModosGame {
                         logic.CalcularDificultad();
                         int num1 = grn.nextInt(1, logic.dificultad); //Genera un numero aleatorio entre 1 y 10
                         int num2 = grn.nextInt(1, logic.dificultad); //Genera un numero aleatorio entre 1 y 10
-                        logic.GenOperation(num1, num2);
-                        System.out.print("<:");
-                        respuesta = tec.nextInt();
-                        logic.InGame(respuesta);
-                        if (logic.SalirDelJuego)
-                        {
-                            jugando = false;
-                            break;
+                        if (num1 == num2) {
+                            System.out.println("Numeros iguales, sumas 500 puntos");
+                            logic.puntos += 500; //Suma 50 puntos
                         }
-                        if (logic.perdiste)
-                        {
-                            ex.clear();
-                            System.out.println("Ingresa tu nombre");
+                        else {
+                            logic.GenOperation(num1, num2);
                             System.out.print("<:");
-                            String nombre = tec.next();
-                            tablaMath.agregarPuntajeMath(nombre, logic.puntos);
-                            logic.perdiste = false;
-                            break;
+                            respuesta = tec.nextInt();
+                            logic.InGame(respuesta);
+                            if (logic.SalirDelJuego) {
+                                jugando = false;
+                                break;
+                            }
+                            if (logic.perdiste) {
+                                ex.clear();
+                                System.out.println("Ingresa tu nombre");
+                                System.out.print("<:");
+                                String nombre = tec.next();
+                                tablaMath.agregarPuntajeMath(nombre, logic.puntos);
+                                logic.perdiste = false;
+                                break;
+                            } else {
+                                ex.clear();
+                            }
                         }
                     }
+                    break;
                 }
                 case "2": {
                     menuInstruc = true;
                     while (menuInstruc) {
+                        ex.clear();
                         GameUI.menuInstruction();
                         System.out.print("<:");
                         instrucionesGame = tec.next();
@@ -241,6 +250,7 @@ public class ModosGame {
                             }
                         }
                     }
+                    break;
                 }
                 case "0": {
                     return;

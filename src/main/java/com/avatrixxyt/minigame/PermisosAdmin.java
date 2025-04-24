@@ -14,9 +14,23 @@ public class PermisosAdmin
 			return;
 		} else {
 			System.out.println("✅ Tienes permisos de administrador. Borrando Tabla");// Tienes permiso
-			tabla.reiniciarTabla();// Borra la tabla
-		}
+            tabla.reiniciarTabla();
+        }
 	}
+
+    public static void BorrarTablaMath() // Comprobar si tienes permiso para borrar tabla
+    {
+
+        TablaPuntuacionMath tablaMath = new TablaPuntuacionMath();
+        if (!tienePermisos())// Si no tienes permiso
+        {
+            System.out.println("❌ No tienes permisos de administrador. Opcion denegada.");// No puedes borrar la tabla;
+            return;
+        } else {
+            System.out.println("✅ Tienes permisos de administrador. Borrando Tabla");// Tienes permiso
+            tablaMath.reiniciarTablaMath();
+        }
+    }
 
     static boolean tienePermisos()//Detectar si tienes permisos
     {

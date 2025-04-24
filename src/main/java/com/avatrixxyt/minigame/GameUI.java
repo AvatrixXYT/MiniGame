@@ -10,7 +10,7 @@ public class GameUI
 		System.out.println("|   Bienvenido al Juego   |");
 		System.out.println("|                         |");
 		System.out.println("|        1)Empezar        |");
-		System.out.println("|        2)Infinito        |");
+		System.out.println("|        2)Infinito       |");
 		System.out.println("|        3)Creditos       |");
 		System.out.println("|  4)Tabla de puntuacion  |");
 		System.out.println("|         5)Salir         |");
@@ -37,7 +37,8 @@ public class GameUI
 		System.out.println("\n_________Opciones__________");
 		System.out.println("|                         |");
 		System.out.println("|        1)Regresar       |");
-		System.out.println("|  2)Reiniciar Puntajes   |");
+		System.out.println("|     2)Cambiar tabla     |");
+		System.out.println("|  3)Reiniciar Puntajes   |");
 		System.out.println("|                         |");
 		System.out.println("---------------------------");
 	}
@@ -132,8 +133,7 @@ public class GameUI
 	}
 	public static void gameMath(int num1, int num2, String op) {
 		System.out.println("_________________________jugando_________________________");
-		System.out.println("| Operacion: "+num1+" "+op+" "+num2+" = ? |");
-		System.out.println("|                        0)Salir                        |");
+		System.out.println("|        Operacion: "+num1+" "+op+" "+num2+" = ?        |");
 		System.out.println("---------------------------------------------------------");
 	}
 	public static void perdisteMath(int num) {
