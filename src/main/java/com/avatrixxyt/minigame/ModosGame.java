@@ -193,6 +193,7 @@ public class ModosGame {
                     ex.clear();
                     System.out.println("Que empieze el juego");
                     Thread.sleep(1000);//Tiempo en pausa 1 segundo
+                    break;
                 }
                 case "2": {
                     menuInstruc = true;
