@@ -50,7 +50,7 @@ public class LogicGameMath {
             dificultad = 500;
         } else if (puntos > 5000) {
             dificultad = 200;
-        } else if (puntos > 0) {
+        } else if (puntos >= 0) {
             dificultad = 50;
         }
     }
