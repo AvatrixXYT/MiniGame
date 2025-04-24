@@ -18,6 +18,7 @@ public class Main
 		Clean ex = new Clean();
 		Scanner tec = new Scanner(System.in);
 		TablaPuntuacion tabla = new TablaPuntuacion();//Establecer la tabla de puntuacion
+		TablaPuntuacionMath tablaMath = new TablaPuntuacionMath();
 		ModosGame game = new ModosGame();//Establecer el modo de juego
 		
 		while(true)
