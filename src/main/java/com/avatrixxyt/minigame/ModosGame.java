@@ -173,7 +173,54 @@ public class ModosGame {
             }
         }//while del juego
     }
-    public void JuegoMath()
+    public void JuegoMath() throws InterruptedException
     {
+        String menuMath;//Menu de opciones
+        String instrucionesGame;//Menu de instrucciones
+
+        boolean gameCae;
+        boolean menuInstruc;
+
+        gameCae = true;
+        while (gameCae)
+        {
+            Clean ex = new Clean();
+            GameUI.menuGameMath();
+            System.out.print("<:");
+            menuMath = tec.next();
+            switch (menuMath) {
+                case "1": {
+                    ex.clear();
+                    System.out.println("Que empieze el juego");
+                    Thread.sleep(1000);//Tiempo en pausa 1 segundo
+                }
+                case "2": {
+                    menuInstruc = true;
+                    while (menuInstruc) {
+                        GameUI.menuInstruction();
+                        System.out.print("<:");
+                        instrucionesGame = tec.next();
+                        switch (instrucionesGame) {
+                            case "0": {
+                                menuInstruc = false;
+                                break;
+                            }
+
+                            default: {
+                                System.out.println("Opcion invalida");
+                                Thread.sleep(1000);//Tiempo en pausa 1 segundo
+                            }
+                        }
+                    }
+                }
+                case "0": {
+                    return;
+                }
+                default: {
+                    System.out.println("Opcion invalida");
+                    Thread.sleep(1000);//Tiempo en pausa 1 segundo
+                }
+            }
+        }
     }
 }

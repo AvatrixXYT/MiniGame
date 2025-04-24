@@ -101,5 +101,27 @@ public class GameUI
 		System.out.println("\n\n");
 	}
 	//game math
-
+	public static void menuGameMath()
+	{
+		System.out.println("_____Juego Infinito_____");
+		System.out.println("|                      |");
+		System.out.println("|   1)Empezar          |");
+		System.out.println("|   2)Reglas           |");
+		System.out.println("|                      |");
+		System.out.println("|   0)Regresar         |");
+		System.out.println("|                      |");
+		System.out.println("------------------------");
+	}
+	public static void menuInstruction()
+	{
+		System.out.println("_____________________Instrucciones_____________________");
+		System.out.println("|                                                     |");
+		System.out.println("| Realiza las operacionas matematicas sin equivocarte |");
+		System.out.println("| Mientras mas puntos tengas, mas dificil las opera-  |");
+		System.out.println("| ciones, consige la mayor cantidad de puntos         |");
+		System.out.println("|                                                     |");
+		System.out.println("|                      0)Regrear                      |");
+		System.out.println("|                                                     |");
+		System.out.println("-------------------------------------------------------");
+	}
 }
