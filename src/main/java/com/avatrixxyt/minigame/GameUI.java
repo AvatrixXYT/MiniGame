@@ -124,4 +124,10 @@ public class GameUI
 		System.out.println("|                                                     |");
 		System.out.println("-------------------------------------------------------");
 	}
+	public static void playerStarus(int puntos) {
+		System.out.println("_________________________jugando_________________________");
+		System.out.println("|                 Puntos: "+puntos+"                    |");
+		System.out.println("|                        0)Salir                        |");
+		System.out.println("---------------------------------------------------------");
+	}
 }
