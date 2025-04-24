@@ -63,7 +63,7 @@ public class TablaPuntuacion
 
     public void mostrarPuntuaciones()//Muesta los puntajes en pantalla
     {
-        System.out.println("🏆 TOP 10 PUNTUACIONES:");
+        System.out.println("🏆 TOP 10 PUNTUACIONES DEL JUEGO NORMAL:");
         int pos = 1;
         for (Puntaje p : puntajes) {
             System.out.println(pos++ + ". " + p.getJugador() + ": " + p.getPuntuacion());//Genera la lista asta 10

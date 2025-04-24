@@ -52,7 +52,7 @@ public class TablaPuntuacionMath {
     }
 
     public void mostrarPuntuacionesMath() {
-        System.out.println("🏆 TOP 10 PUNTUACIONES DE MATEMÁTICAS:");
+        System.out.println("🏆 TOP 10 PUNTUACIONES DEL MODO INFINITO:");
         int pos = 1;
         for (Puntaje p : puntajesMath) {
             System.out.println(pos++ + ". " + p.getJugador() + ": " + p.getPuntuacion()); // Muestra cada puntaje
