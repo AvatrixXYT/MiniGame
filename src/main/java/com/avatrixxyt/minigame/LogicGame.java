@@ -16,7 +16,7 @@ public class LogicGame
 	{
     	if (num == 0)
 		{
-			resultOP = 0;
+			resultOP = 1;
 		}
 		else if(num > min-1 && num<max+1)//Si es mayor que y Menor que
 		{
