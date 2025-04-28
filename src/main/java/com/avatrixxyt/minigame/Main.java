@@ -23,11 +23,13 @@ public class Main
 		TablaPuntuacion tabla = new TablaPuntuacion();//Establecer la tabla de puntuacion
 		TablaPuntuacionMath tablaMath = new TablaPuntuacionMath();
 		ModosGame game = new ModosGame();
-		
+
+		AdminIdioma idioma = new AdminIdioma();
+		idioma.es();
 		while(true)
 		{
 			ex.clear();//Limpiar pantalla
-			GameUI.menu();//Muestra el menu
+			GameUI.menu(idioma.P1, idioma.P2, idioma.P3, idioma.P4, idioma.P5, idioma.P6);//Muestra el menu
 			System.out.print("<: ");
 			op = tec.next();
 			GameUI.Salto();//Salto de linea

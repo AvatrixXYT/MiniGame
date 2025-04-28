@@ -3,17 +3,17 @@ package com.avatrixxyt.minigame;
 public class GameUI 
 {
 	//Menu principal
-	public static void menu()
+	public static void menu(String T1, String T2, String T3, String T4, String T5, String T6)
 	{
 		System.out.println("____________Menu___________");
 		System.out.println("|                         |");
-		System.out.println("|   Bienvenido al Juego   |");
+		System.out.println("|   "+T1+"   |");
 		System.out.println("|                         |");
-		System.out.println("|        1)Empezar        |");
-		System.out.println("|        2)Infinito       |");
-		System.out.println("|        3)Creditos       |");
-		System.out.println("|  4)Tabla de puntuacion  |");
-		System.out.println("|         5)Salir         |");
+		System.out.println("|        1)"+T2+"        |");
+		System.out.println("|        2)"+T3+"       |");
+		System.out.println("|        3)"+T4+"       |");
+		System.out.println("|  4)"+T5+"  |");
+		System.out.println("|         5)"+T6+"         |");
 		System.out.println("|                         |");
 		System.out.println("---------------------------");
 	}
