@@ -22,7 +22,7 @@ public class Main
 		Scanner tec = new Scanner(System.in);
 		TablaPuntuacion tabla = new TablaPuntuacion();//Establecer la tabla de puntuacion
 		TablaPuntuacionMath tablaMath = new TablaPuntuacionMath();
-		ModosGame game = new ModosGame();//Establecer el modo de juego
+		ModosGame game = new ModosGame();
 		
 		while(true)
 		{
@@ -45,79 +45,13 @@ public class Main
 				}
 				case "3":
 				{
-					mdc = true;//Reinicia el valor del while
-					while (mdc) {
-						ex.clear();//Limpiar pantalla
-						GameUI.credits();//Muesta los creditos
-						System.out.print("<:");
-						swCre = tec.next();
-						if (swCre.equals("1")) //Salir del menu de credito
-						{
-							mdc = false;//Valor para salir
-						} else {
-							System.out.println("Opcion invalida");
-							Thread.sleep(1000);//Tiempo en pausa 1 segundo
-						}
-					}//Switch regresar creditos
+					Creditos.Menu();
+					break;
 				}//Switch menu case 4 salir
-				case "4":
-				{
-					ex.clear();//Limpiar pantalla
-					tipoTabla = true;//Establece la tabla de puntuacion
-					wdtp=true;//Reinicia el valor del while
-					while(wdtp)
-					{
-						ex.clear();
-						tabla.recargarDesdeArchivo();//Recarga archivo JSON de la tabla
-						tablaMath.recargarDesdeArchivoMath();
-						if (tipoTabla) {
-							tabla.mostrarPuntuaciones();
-						} else if (tipoTabla == false) {
-							tablaMath.mostrarPuntuacionesMath();
-						}
-						GameUI.tablaDePuntuacion();
-						System.out.print("<:");
-						sdtdp = tec.next();
-						GameUI.Salto();//Salto de linia
-						switch(sdtdp)//Switch de tabla de puntuacion
-						{
-							case "1"://Case 1 salir de tabla de puntuacion
-							{
-								wdtp=false;//Valor de salida
-								break;
-							}//Case 1 salir de tabla de puntuacion
-							case "2":
-							{
-								if (tipoTabla) {
-									tipoTabla = false;
-									borrarTabla = true;
-								} else if (tipoTabla == false) {
-									tipoTabla = true;
-									borrarTabla = false;
-								}
-								ex.clear();
-								break;
-							}
-							case "3"://Case 2 borrar datos de tabla de puntuacion
-							{
-								if (borrarTabla) {
-									PermisosAdmin.BorrarTabla();
-									Thread.sleep(1000);//Tiempo de pausa 1 segundo
-								} else if (borrarTabla == false) {
-									PermisosAdmin.BorrarTablaMath();
-									Thread.sleep(1000);
-								}
-							}//Case 2 borrar datos de tabla de puntuacion
-							break;
-							default://Default opcion invalida
-							{
-								System.out.println("Opcion invalida");
-								Thread.sleep(1000);//Tiempo de pausa 1 segundo
-							}//Default opcion invalida
-						}
-					}//Menu de tabla de puntuacion
+				case "4": {
+					MenuTabla.Menu();
+					break;
 				}
-				break;
 			case "5":
 			{
 				System.out.print("Hasta la proxima");

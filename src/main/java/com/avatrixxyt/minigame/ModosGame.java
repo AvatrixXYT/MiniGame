@@ -9,7 +9,6 @@ public class ModosGame {
     Clean ex = new Clean();
     Scanner tec = new Scanner(System.in);
     Random grn = new Random(System.currentTimeMillis()); //variable para el numero aleatorio
-
     public void NumeroMagico() throws InterruptedException
     {
         LogicGame logic = new LogicGame();//Establecer la logica del juego
@@ -187,7 +186,7 @@ public class ModosGame {
 
         while (true)
         {
-            Clean ex = new Clean();
+
             ex.clear();
             GameUI.menuGameMath();
             System.out.print("<:");
