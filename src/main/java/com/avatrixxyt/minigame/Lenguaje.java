@@ -132,9 +132,9 @@ public class Lenguaje {
         P12 = "|              0)Back                  |";
         //Scoreboard
         P13 = "\n_________Options___________";
-        P14 = "|  2)Change table        |";
-        P15 = "|  3)Restart Scores      |";
-        P16 = "|  0)Back                |";
+        P14 = "|  2)Change table         |";
+        P15 = "|  3)Restart Scores       |";
+        P16 = "|  0)Back                 |";
         //Difficulty
         P17 = "\n_______Difficulty________";
         P18 = "|     1)Easy    1-10      |";
