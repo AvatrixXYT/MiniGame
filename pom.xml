@@ -6,7 +6,7 @@
     <!-- Identificación del proyecto -->
     <groupId>com.avatrixxyt.game</groupId>
     <artifactId>MiniGame</artifactId>
-    <version>1.0.0</version>
+    <version>6</version>
     <packaging>jar</packaging>
 
     <!-- Nombre y descripción -->
