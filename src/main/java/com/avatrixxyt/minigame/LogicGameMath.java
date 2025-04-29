@@ -20,13 +20,13 @@ public class LogicGameMath {
     public void GenOperation(int num1, int num2) {
         int tipoOP = grn.nextInt(1,3); //Genera un numero aleatorio entre 1 y 4
         if (tipoOP == 1) {
-            GameUI.gameMath(num1, num2, " + ");
+            GameUI.gameMath(num1, num2, " + ", Lenguaje.P44, Lenguaje.P47);
             respuestaCorrecta = num1 + num2; //Suma
         } else if (tipoOP == 2) {
-            GameUI.gameMath(num1, num2, " - ");
+            GameUI.gameMath(num1, num2, " - ", Lenguaje.P44, Lenguaje.P47);
             respuestaCorrecta = num1 - num2; //Resta
         } else if (tipoOP == 3) {
-            GameUI.gameMath(num1, num2, " * ");
+            GameUI.gameMath(num1, num2, " * ", Lenguaje.P44, Lenguaje.P47);
             respuestaCorrecta = num1 * num2; //Multiplicacion
         }
     }

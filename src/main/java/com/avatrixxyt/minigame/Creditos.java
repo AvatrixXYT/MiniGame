@@ -11,10 +11,10 @@ public class Creditos {
         Clean ex = new Clean();
         while (true) {
             ex.clear();//Limpiar pantalla
-            GameUI.credits();//Muesta los creditos
+            GameUI.credits(Lenguaje.P9,Lenguaje.P10,Lenguaje.P11,Lenguaje.P12);//Muesta los creditos
             System.out.print("<:");
             swCre = tec.next();
-            if (swCre.equals("1")) //Salir del menu de credito
+            if (swCre.equals("0")) //Salir del menu de credito
             {
                 return;
             } else {

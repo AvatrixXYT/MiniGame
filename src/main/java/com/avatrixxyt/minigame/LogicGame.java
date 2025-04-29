@@ -93,23 +93,23 @@ public class LogicGame
     		if(Dificultad==10)//Si la dificultad es facil
     		{
     			if(NumeroRandom <= 5)//Si el número aleatorio es menor que 5
-    			{GameUI.menor(5);}//te da una pista de que es menor
+    			{GameUI.Pista(5,Lenguaje.P22,Lenguaje.P23);}//te da una pista de que es menor
     			else//Si el número aleatorio es mayor que 5
-    			{GameUI.mayor(5);}//te da una pista de que es mayor
+    			{GameUI.Pista(5,Lenguaje.P22,Lenguaje.P24);}//te da una pista de que es mayor
     		}
     		else if(Dificultad == 25)//Si la dificultad es media
 			{
 				if(NumeroRandom <= 13)//Si el numeor aleatorio es mayor que 13
-				{GameUI.menor(13);}//te da una pista de que es menor
+				{GameUI.Pista(13,Lenguaje.P22,Lenguaje.P23);}//te da una pista de que es menor
 				else//Si el número aleatorio es mayor que 13
-				{GameUI.mayor(13);}//te da una pista de que es mayor
+				{GameUI.Pista(13,Lenguaje.P22,Lenguaje.P24);}//te da una pista de que es mayor
 			}
 			else if(Dificultad == 50)//Si la dificultas es dificil
 			{
 				if(NumeroRandom <= 25)//Si el numeor aleatorio es mayor que 25
-				{GameUI.menor(25);}//te da una pista de que es menor
+				{GameUI.Pista(25,Lenguaje.P22,Lenguaje.P23);}//te da una pista de que es menor
 				else//Si el numeor aleatorio es menor que 25
-				{GameUI.mayor(25);}//te da una pista de que es mayor
+				{GameUI.Pista(25,Lenguaje.P22,Lenguaje.P24);}//te da una pista de que es mayor
 			}
 			else//Si la dificultad no es dificil
 			{

@@ -3,98 +3,94 @@ package com.avatrixxyt.minigame;
 public class GameUI 
 {
 	//Menu principal
-	public static void menu(String T1, String T2, String T3, String T4, String T5, String T6)
+	public static void menu(String T1, String T2, String T3, String T4, String T5, String T6, String T7, String T8)
 	{
-		System.out.println("____________Menu___________");
-		System.out.println("|                         |");
-		System.out.println("|   "+T1+"   |");
-		System.out.println("|                         |");
-		System.out.println("|        1)"+T2+"        |");
-		System.out.println("|        2)"+T3+"       |");
-		System.out.println("|        3)"+T4+"       |");
-		System.out.println("|  4)"+T5+"  |");
-		System.out.println("|         5)"+T6+"         |");
-		System.out.println("|                         |");
-		System.out.println("---------------------------");
+		System.out.println(T1);
+		System.out.println("|                          |");
+		System.out.println("|   "+T2+"   |");
+		System.out.println("|                          |");
+		System.out.println("|  1)"+T3+"|");
+		System.out.println("|  2)"+T4+"|");
+		System.out.println("|  3)"+T5+"|");
+		System.out.println("|  4)"+T6+"|");
+		System.out.println("|  5)"+T7+"|");
+		System.out.println("|                          |");
+		System.out.println("|  0)"+T8+"|");
+		System.out.println("|                          |");
+		System.out.println("----------------------------");
 	}
 	//Creditos del juego
-	public static void credits()
+	public static void credits(String T1, String T2, String T3, String T4)
 	{
-		System.out.println("________________Creditos________________");
+		System.out.println(T1);
 		System.out.println("|                                      |");
-		System.out.println("|               Creador:               |");
+		System.out.println(T2);
 		System.out.println("|      Andres Villalobos Arellano      |");
 		System.out.println("|                                      |");
-		System.out.println("|            Idea original:            |");
+		System.out.println(T3);
 		System.out.println("|  Profesor Mendoza Chulim Hugo César  |");
 		System.out.println("|                                      |");
-		System.out.println("|              1)Regresar              |");
+		System.out.println(T4);
 		System.out.println("----------------------------------------");
 	}
 	//Opciones de la tabla
-	public static void tablaDePuntuacion()
+	public static void tablaDePuntuacion(String T1, String T2, String T3, String T4)
 	{
-		System.out.println("\n_________Opciones__________");
+		System.out.println(T1);
 		System.out.println("|                         |");
-		System.out.println("|        1)Regresar       |");
-		System.out.println("|     2)Cambiar tabla     |");
-		System.out.println("|  3)Reiniciar Puntajes   |");
+		System.out.println(T2);
+		System.out.println(T3);
+		System.out.println("|                         |");
+		System.out.println(T4);
 		System.out.println("|                         |");
 		System.out.println("---------------------------");
 	}
 	//Opciones de dificultad
-	public static void tablaDeDificultad()
+	public static void tablaDeDificultad(String T1, String T2, String T3, String T4, String T5)
 	{
-		System.out.println("\n_______Dificultad________");
+		System.out.println(T1);
 		System.out.println("|                         |");
-		System.out.println("|     1)Facil 1-10        |");
-		System.out.println("|     2)Medio 1-25        |");
-		System.out.println("|     3)Dificil 1-50      |");
+		System.out.println(T2);
+		System.out.println(T3);
+		System.out.println(T4);
 		System.out.println("|                         |");
-		System.out.println("|     0)Regresar          |");
+		System.out.println(T5);
 		System.out.println("|                         |");
 		System.out.println("---------------------------");
 	}
-	//Pista menor
-	public static void menor(int Valor) 
+	//Pista
+	public static void Pista(int Valor,String T1,String T2)
 	{
-		System.out.println("__________________Pista__________________");
-		System.out.println("| El numero magico es menor o igual a "+ Valor +" |");
-		System.out.println("-----------------------------------------");
-	}
-	//Pista mayor
-	public static void mayor(int Valor) 
-	{
-		System.out.println("__________________Pista__________________");
-		System.out.println("| El numero magico es mayor o igual a "+ Valor +" |");
+		System.out.println(T1);
+		System.out.println(T2+" "+Valor+" |");
 		System.out.println("-----------------------------------------");
 	}
 	//Vidas restantes y dificultad
-	public static void valoresDelJuego(int Vidas,int Puntos, String Dificultad)
+	public static void valoresDelJuego(int Vidas,int Puntos, String Dificultad,String T1, String T2, String T3, String T4, String T5)
 	{
-		System.out.println("_________________________jugando_________________________");
-		System.out.println("| Tines: "+Vidas+" vidas   Tienes: "+Puntos+ " Puntos    dificultad: "+Dificultad+"|");
-		System.out.println("|                        0)Salir                        |");
+		System.out.println(T1);
+		System.out.println(T2+Vidas+T3+Puntos+T4+Dificultad+"|");
+		System.out.println(T5);
 		System.out.println("---------------------------------------------------------");
 	}
 	//Jugar otra vez
-	public static void jugarDeNuevo()
+	public static void jugarDeNuevo(String T1,String T2)
 	{
-		System.out.println("Quieres jugar otra vez?");
-		System.out.println("       1)Si 2)No       ");
+		System.out.println(T1);
+		System.out.println(T2);
 	}
-	public static void ganaste()
+	public static void ganaste(String T1)
 	{
 		System.out.println("_________________________________________________________");
-		System.out.println("|                        Ganaste                        |");
+		System.out.println("|                        "+T1+"                        |");
 		System.out.println("---------------------------------------------------------");
 	}
 	//Perdiste
-	public static void perdiste(int num)
+	public static void perdiste(int num,String T1,String T2)
 	{
 		System.out.println("_________________________________________________________");
-		System.out.println("|                        Perdiste                       |");
-		System.out.println("|             El numero magico era: "+num+"                   |");
+		System.out.println("|                        "+T1+"                       |");
+		System.out.println("|             "+T2+" "+num+"                   |");
 		System.out.println("---------------------------------------------------------");
 	}
 	public static void Salto()
@@ -102,44 +98,45 @@ public class GameUI
 		System.out.println("\n\n");
 	}
 	//game math
-	public static void menuGameMath()
+	public static void menuGameMath(String T1, String T2, String T3, String T4)
 	{
-		System.out.println("_____Juego Infinito_____");
+		System.out.println(T1);
 		System.out.println("|                      |");
-		System.out.println("|   1)Empezar          |");
-		System.out.println("|   2)Reglas           |");
+		System.out.println(T2);
+		System.out.println(T3);
 		System.out.println("|                      |");
-		System.out.println("|   0)Regresar         |");
+		System.out.println(T4);
 		System.out.println("|                      |");
 		System.out.println("------------------------");
 	}
-	public static void menuInstruction()
+	public static void menuInstruction(String T1, String T2, String T3, String T4, String T5)
 	{
-		System.out.println("_____________________Instrucciones_____________________");
+		System.out.println(T1);
 		System.out.println("|                                                     |");
-		System.out.println("| Realiza las operacionas matematicas sin equivocarte |");
-		System.out.println("| Mientras mas puntos tengas, mas dificil las opera-  |");
-		System.out.println("| ciones, consige la mayor cantidad de puntos         |");
+		System.out.println(T2);
+		System.out.println(T3);
+		System.out.println(T4);
 		System.out.println("|                                                     |");
-		System.out.println("|                      0)Regrear                      |");
+		System.out.println(T5);
 		System.out.println("|                                                     |");
 		System.out.println("-------------------------------------------------------");
 	}
-	public static void playerStarus(int puntos) {
-		System.out.println("_________________________jugando_________________________");
-		System.out.println("|                 Puntos: "+puntos+"                    |");
-		System.out.println("|                        0)Salir                        |");
+	public static void playerStarus(int puntos,String T1, String T2, String T3) {
+		System.out.println("_________________________"+T1+"_________________________");
+		System.out.println("|                 "+T2+": "+puntos+"                    |");
+		System.out.println("|                        "+T3+"                        |");
 		System.out.println("---------------------------------------------------------");
 	}
-	public static void gameMath(int num1, int num2, String op) {
-		System.out.println("_________________________jugando_________________________");
-		System.out.println("|        Operacion: "+num1+" "+op+" "+num2+" = ?        |");
+	public static void gameMath(int num1, int num2, String op,String T1, String T2) {
+		System.out.println("_________________________"+T1+"_________________________");
+		System.out.println("|        "+T2+": "+num1+" "+op+" "+num2+" = ?        |");
 		System.out.println("---------------------------------------------------------");
 	}
-	public static void perdisteMath(int num) {
+	public static void perdisteMath(int num,int Resultado,String T1, String T2, String T3,String T4) {
 		System.out.println("_________________________________________________________");
-		System.out.println("|                        Perdiste                       |");
-		System.out.println("|                 Ganaste "+num+" puntos                |");
+		System.out.println("|                        "+T1+"                       |");
+		System.out.println("|                    "+T2+" "+Resultado+"                |");
+		System.out.println("|                 "+T3+" "+num+" "+T4+"                |");
 		System.out.println("---------------------------------------------------------");
 	}
 }

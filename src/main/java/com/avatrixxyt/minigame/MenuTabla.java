@@ -34,17 +34,17 @@ public class MenuTabla {
                 break;
             }
             }
-            GameUI.tablaDePuntuacion();
+            GameUI.tablaDePuntuacion(Lenguaje.P13,Lenguaje.P14,Lenguaje.P15,Lenguaje.P16);
             System.out.print("<:");
             sdtdp = tec.next();
             GameUI.Salto();//Salto de linia
             switch(sdtdp)//Switch de tabla de puntuacion
             {
-                case "1"://Case 1 salir de tabla de puntuacion
+                case "0"://Case 1 salir de tabla de puntuacion
                 {
                     return;
                 }//Case 1 salir de tabla de puntuacion
-                case "2":
+                case "1":
                 {
                     switch (tipoTabla) {
                         case 1: {
@@ -61,7 +61,7 @@ public class MenuTabla {
                     ex.clear();
                     break;
                 }
-                case "3"://Case 2 borrar datos de tabla de puntuacion
+                case "2"://Case 2 borrar datos de tabla de puntuacion
                 {
                     switch (borrarTabla) {
                         case 1: {

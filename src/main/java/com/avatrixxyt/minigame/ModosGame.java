@@ -21,7 +21,6 @@ public class ModosGame {
         int p2;//Perimetro 2 para la pista
 
         boolean jov;//While para jugar otra vez
-        boolean jugando = true;//While el juego
         boolean selDificultad;//While de la dificultad
 
         String jugador;//Establecer nombre de jugador
@@ -32,16 +31,14 @@ public class ModosGame {
         while (selDificultad) {
             ex.clear();//Limpiar pantalla
             System.out.println("Seleciona la Dificultad");
-            GameUI.tablaDeDificultad();//Muesta la tabla de dificultad
+            GameUI.tablaDeDificultad(Lenguaje.P17,Lenguaje.P18,Lenguaje.P19,Lenguaje.P20,Lenguaje.P21);//Muesta la tabla de dificultad
             GameUI.Salto();//Salto de linea
             System.out.print("<:");
             dificultad = tec.next();
             switch (dificultad) {
                 case "0"://Regresar
                 {
-                    selDificultad = false;//Salir del menu de dificultad
-                    jugando = false;//Reinicia el valor del while
-                    break;
+                    return;
                 }
                 case "1"://Facil
                 {
@@ -66,16 +63,15 @@ public class ModosGame {
         System.out.println("Que empieze el Juego");
         nm = grn.nextInt(ngmi, ngma);//Genera el primer numero aleatorio
         vidas = logic.vidasInicial;//Te da las vidas para iniciar
-        while (jugando) {
-            GameUI.valoresDelJuego(vidas, logic.puntos, logic.dificultad);//Valores del jugador
+        while (true) {
+            GameUI.valoresDelJuego(vidas, logic.puntos, logic.dificultad,Lenguaje.P25,Lenguaje.P26,Lenguaje.P27,Lenguaje.P28,Lenguaje.P29);//Valores del jugador
             GameUI.Salto();//Salto de linea
             System.out.println("Introduce un numero aleatorio entre " + ngmi + " y " + ngma);
             System.out.print("<: ");
             xn = tec.nextInt();
             logic.ComMinMax(ngmi, ngma, xn);//Da los valores para checar si el numero es valido o no y da el resultado
             if (logic.resultOP == 1) {
-                jugando = false;
-                break;
+                return; //Salir del juego
             } else {
                 if (logic.resultOP == 2) {
                     //if (logic.Pruebas(xn))//activar para hacer pruebas
@@ -85,11 +81,11 @@ public class ModosGame {
                         while (jov) {
                             ex.clear();//Limpiar pantalla
                             logic.CalcularPuntos(vidas, ngma);//Calcula los puntos que tienes
-                            GameUI.valoresDelJuego(vidas, logic.puntos, logic.dificultad);//Valores del jugador
+                            GameUI.valoresDelJuego(vidas, logic.puntos, logic.dificultad,Lenguaje.P25,Lenguaje.P26,Lenguaje.P27,Lenguaje.P28,Lenguaje.P29);//Valores del jugador
                             GameUI.Salto();//Salto de linea
-                            GameUI.ganaste();//Pantalla de ganar
+                            GameUI.ganaste(Lenguaje.P32);//Pantalla de ganar
                             GameUI.Salto();//Salto de linea
-                            GameUI.jugarDeNuevo();//Opciones para jugar de nuevo
+                            GameUI.jugarDeNuevo(Lenguaje.P30,Lenguaje.P31);//Opciones para jugar de nuevo
                             System.out.print("<:");
                             reinJuego = tec.next();
                             switch (reinJuego) {
@@ -133,11 +129,11 @@ public class ModosGame {
                             while (jov) {
                                 ex.clear();//Limpiar pantalla
                                 logic.CalcularPuntos(vidas, ngma);//Calcula los puntos que tienes
-                                GameUI.valoresDelJuego(vidas, logic.puntos, logic.dificultad);//Valores del jugador
+                                GameUI.valoresDelJuego(vidas, logic.puntos, logic.dificultad,Lenguaje.P25,Lenguaje.P26,Lenguaje.P27,Lenguaje.P28,Lenguaje.P29);//Valores del jugador
                                 GameUI.Salto();//Salto de linea
-                                GameUI.perdiste(nm);//Pantalla de perder
+                                GameUI.perdiste(nm,Lenguaje.P33,Lenguaje.P34);//Pantalla de perder
                                 GameUI.Salto();//Salto de linea
-                                GameUI.jugarDeNuevo();//Opciones de jugar de nuuevo
+                                GameUI.jugarDeNuevo(Lenguaje.P30,Lenguaje.P31);//Opciones de jugar de nuuevo
                                 System.out.print("<:");
                                 reinJuego = tec.next();
                                 switch (reinJuego) {
@@ -188,7 +184,7 @@ public class ModosGame {
         {
 
             ex.clear();
-            GameUI.menuGameMath();
+            GameUI.menuGameMath(Lenguaje.P35,Lenguaje.P36,Lenguaje.P37,Lenguaje.P48);
             System.out.print("<:");
             menuMath = tec.next();
             switch (menuMath) {
@@ -198,7 +194,7 @@ public class ModosGame {
                     jugando = true;
                     while (jugando)
                     {
-                        GameUI.playerStarus(logic.puntos);
+                        GameUI.playerStarus(logic.puntos,Lenguaje.P44,Lenguaje.P45,Lenguaje.P46);
                         logic.CalcularDificultad();
                         int num1 = grn.nextInt(1, logic.dificultad); //Genera un numero aleatorio entre 1 y 10
                         int num2 = grn.nextInt(1, logic.dificultad); //Genera un numero aleatorio entre 1 y 10
@@ -212,11 +208,11 @@ public class ModosGame {
                             respuesta = tec.nextInt();
                             logic.InGame(respuesta);
                             if (logic.SalirDelJuego) {
-                                jugando = false;
-                                break;
+                                return;
                             }
                             if (logic.perdiste) {
                                 ex.clear();
+                                GameUI.perdisteMath(logic.puntos,logic.respuestaCorrecta,Lenguaje.P33,Lenguaje.P48,Lenguaje.P32,Lenguaje.P45);
                                 System.out.println("Ingresa tu nombre");
                                 System.out.print("<:");
                                 String nombre = tec.next();
@@ -234,7 +230,7 @@ public class ModosGame {
                     menuInstruc = true;
                     while (menuInstruc) {
                         ex.clear();
-                        GameUI.menuInstruction();
+                        GameUI.menuInstruction(Lenguaje.P39,Lenguaje.P40,Lenguaje.P41,Lenguaje.P42,Lenguaje.P43);
                         System.out.print("<:");
                         instrucionesGame = tec.next();
                         switch (instrucionesGame) {

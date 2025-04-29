@@ -6,35 +6,30 @@ import com.avatrixxyt.util.*;
 
 public class Main 
 {
+
 	public static void main(String[]args) throws InterruptedException
 	{
-		boolean mdc;//While del menu de creditos
-		boolean wdtp;//While de la tabla de puntuacion
-
-		String sdtdp;//Switch opciones de la tabla de puntucion
-		String swCre;//Switch para salir de los creditos
 		String op;//Switch del menu principal
-
-		boolean tipoTabla;
-		boolean borrarTabla = true;//Variable para borrar tabla
-
 		Clean ex = new Clean();
 		Scanner tec = new Scanner(System.in);
 		TablaPuntuacion tabla = new TablaPuntuacion();//Establecer la tabla de puntuacion
 		TablaPuntuacionMath tablaMath = new TablaPuntuacionMath();
 		ModosGame game = new ModosGame();
-
-		AdminIdioma idioma = new AdminIdioma();
-		idioma.es();
+		Lenguaje.es();
 		while(true)
 		{
 			ex.clear();//Limpiar pantalla
-			GameUI.menu(idioma.P1, idioma.P2, idioma.P3, idioma.P4, idioma.P5, idioma.P6);//Muestra el menu
+			GameUI.menu(Lenguaje.P1, Lenguaje.P2, Lenguaje.P3, Lenguaje.P4, Lenguaje.P5, Lenguaje.P6, Lenguaje.P7, Lenguaje.P8);//Muestra el menu
 			System.out.print("<: ");
 			op = tec.next();
 			GameUI.Salto();//Salto de linea
 			switch(op)
 			{
+				case "0":
+				{
+					System.out.print("Hasta la proxima");
+					return;
+				}
 				case "1":
 				{
 					game.NumeroMagico();
@@ -47,18 +42,18 @@ public class Main
 				}
 				case "3":
 				{
+					Lenguaje.SelectIdioma();
+					break;
+				}
+				case "4":
+				{
 					Creditos.Menu();
 					break;
-				}//Switch menu case 4 salir
-				case "4": {
+				}
+				case "5": {
 					MenuTabla.Menu();
 					break;
 				}
-			case "5":
-			{
-				System.out.print("Hasta la proxima");
-				return;
-			}//Switch case 3 tabla de puntuacion
 			default ://Default opcion invalida
 			{
 				System.out.println("Opcion invalida");
