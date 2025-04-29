@@ -30,7 +30,7 @@ public class ModosGame {
         selDificultad = true;//Reinicia el valor del while
         while (selDificultad) {
             ex.clear();//Limpiar pantalla
-            System.out.println("Seleciona la Dificultad");
+            System.out.println(Lenguaje.P55);
             GameUI.tablaDeDificultad(Lenguaje.P17,Lenguaje.P18,Lenguaje.P19,Lenguaje.P20,Lenguaje.P21);//Muesta la tabla de dificultad
             GameUI.Salto();//Salto de linea
             System.out.print("<:");
@@ -60,13 +60,13 @@ public class ModosGame {
         }
         ex.clear();//Limpiar pantalla
         logic.CalcularDificultad(ngma);//Calcula la dificultad
-        System.out.println("Que empieze el Juego");
+        System.out.println(Lenguaje.P56);//Mensaje de inicio
         nm = grn.nextInt(ngmi, ngma);//Genera el primer numero aleatorio
         vidas = logic.vidasInicial;//Te da las vidas para iniciar
         while (true) {
             GameUI.valoresDelJuego(vidas, logic.puntos, logic.dificultad,Lenguaje.P25,Lenguaje.P26,Lenguaje.P27,Lenguaje.P28,Lenguaje.P29);//Valores del jugador
             GameUI.Salto();//Salto de linea
-            System.out.println("Introduce un numero aleatorio entre " + ngmi + " y " + ngma);
+            System.out.println(Lenguaje.P57+ ngmi + Lenguaje.P58 + ngma);
             System.out.print("<: ");
             xn = tec.nextInt();
             logic.ComMinMax(ngmi, ngma, xn);//Da los valores para checar si el numero es valido o no y da el resultado
@@ -100,7 +100,7 @@ public class ModosGame {
                                 case "2"://Caso 2 salir del juego y guardar puntuacion
                                 {
                                     ex.clear();//Limpiar pantalla
-                                    System.out.println("Ingresa tu nombre");
+                                    System.out.println(Lenguaje.P59);//Mensaje de guardar puntuacion
                                     System.out.print("<:");
                                     jugador = tec.next();
                                     logic.GuardarPuntuacion(jugador);//Guarda puntuacion en el JSON
@@ -108,7 +108,7 @@ public class ModosGame {
                                 }//Caso 2 salir del juego y guardar puntuacion
                                 default://Default opcion invalida
                                 {
-                                    System.out.println("Opcion invalida");
+                                    System.out.println(Lenguaje.P54);
                                     Thread.sleep(1000);//Tiempo en pausa 1 segundo
                                 }//Opcion invalida
                             }//Switch para seguir jugando
@@ -117,7 +117,7 @@ public class ModosGame {
                     else//Cuando el numero es incorrecto y pierdes
                     {
                         ex.clear();//Limpiar pantalla
-                        System.out.println("Numero incorecto");
+                        System.out.println(Lenguaje.P60);
                         GameUI.Salto();//Salto de linea
                         p1 = grn.nextInt(0, (ngma / 2));//Genera un numero aleatorio para la pista
                         p2 = grn.nextInt(0, (ngma / 2));//Genera el otro numero aleatorio para la pista
@@ -151,7 +151,7 @@ public class ModosGame {
                                     }
                                     default://Opcion invalida
                                     {
-                                        System.out.println("Opcion invalida");
+                                        System.out.println(Lenguaje.P54);
                                         Thread.sleep(1000);//Tiempo en pausa 1 segundo
                                     }//Opcion invalida
                                 }//Switch para seguir jugando
@@ -161,7 +161,7 @@ public class ModosGame {
                 }//If comprobacion del número mayor y menor
                 else//Numero invalido
                 {
-                    System.out.println("Numero Invalido");
+                    System.out.println(Lenguaje.P61);
                     Thread.sleep(1000);//Tiempo en pasua 1 segundo
                     ex.clear();//Limpiar pantalla
                 }
@@ -177,7 +177,6 @@ public class ModosGame {
 
         int respuesta;//Respuesta del usuario
 
-        boolean jugando;
         boolean menuInstruc;
 
         while (true)
@@ -190,16 +189,16 @@ public class ModosGame {
             switch (menuMath) {
                 case "1": {
                     ex.clear();
-                    System.out.println("Que empieze el juego");
-                    jugando = true;
-                    while (jugando)
+                    System.out.println(Lenguaje.P56);
+
+                    while (true)
                     {
                         GameUI.playerStarus(logic.puntos,Lenguaje.P44,Lenguaje.P45,Lenguaje.P46);
                         logic.CalcularDificultad();
                         int num1 = grn.nextInt(1, logic.dificultad); //Genera un numero aleatorio entre 1 y 10
                         int num2 = grn.nextInt(1, logic.dificultad); //Genera un numero aleatorio entre 1 y 10
                         if (num1 == num2) {
-                            System.out.println("Numeros iguales, sumas 500 puntos");
+                            System.out.println(Lenguaje.P62);
                             logic.puntos += 500; //Suma 50 puntos
                         }
                         else {
@@ -213,18 +212,17 @@ public class ModosGame {
                             if (logic.perdiste) {
                                 ex.clear();
                                 GameUI.perdisteMath(logic.puntos,logic.respuestaCorrecta,Lenguaje.P33,Lenguaje.P48,Lenguaje.P32,Lenguaje.P45);
-                                System.out.println("Ingresa tu nombre");
+                                System.out.println(Lenguaje.P59);
                                 System.out.print("<:");
                                 String nombre = tec.next();
                                 tablaMath.agregarPuntajeMath(nombre, logic.puntos);
                                 logic.perdiste = false;
-                                break;
+                                return;
                             } else {
                                 ex.clear();
                             }
                         }
                     }
-                    break;
                 }
                 case "2": {
                     menuInstruc = true;
@@ -233,16 +231,11 @@ public class ModosGame {
                         GameUI.menuInstruction(Lenguaje.P39,Lenguaje.P40,Lenguaje.P41,Lenguaje.P42,Lenguaje.P43);
                         System.out.print("<:");
                         instrucionesGame = tec.next();
-                        switch (instrucionesGame) {
-                            case "0": {
-                                menuInstruc = false;
-                                break;
-                            }
-
-                            default: {
-                                System.out.println("Opcion invalida");
-                                Thread.sleep(1000);//Tiempo en pausa 1 segundo
-                            }
+                        if (instrucionesGame.equals("0")) {
+                            menuInstruc = false;
+                        } else {
+                            System.out.println(Lenguaje.P54);
+                            Thread.sleep(1000);//Tiempo en pausa 1 segundo
                         }
                     }
                     break;
@@ -251,7 +244,7 @@ public class ModosGame {
                     return;
                 }
                 default: {
-                    System.out.println("Opcion invalida");
+                    System.out.println(Lenguaje.P54);
                     Thread.sleep(1000);//Tiempo en pausa 1 segundo
                 }
             }

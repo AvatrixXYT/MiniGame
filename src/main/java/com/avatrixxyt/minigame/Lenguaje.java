@@ -3,7 +3,7 @@ package com.avatrixxyt.minigame;
 import java.util.Scanner;
 
 public class Lenguaje {
-    static public String P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,P16,P17,P18,P19,P20,P21,P22,P23,P24,P25,P26,P27,P28,P29,P30,P31,P32,P33,P34,P35,P36,P37,P38,P39,P40,P41,P42,P43,P44,P45,P46,P47,P48;
+    static public String P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,P16,P17,P18,P19,P20,P21,P22,P23,P24,P25,P26,P27,P28,P29,P30,P31,P32,P33,P34,P35,P36,P37,P38,P39,P40,P41,P42,P43,P44,P45,P46,P47,P48,P49,P50,P51,P52,P53,P54,P55,P56,P57,P58,P59,P60,P61,P62,P63,P64,P65,P66,P67,P68,P69,P70;
 
     //menu de selecion de idiomas
     public static void SelectIdioma(){
@@ -23,7 +23,7 @@ public class Lenguaje {
                 en();
                 break;
             default:
-                System.out.println("Opcion invalida");
+                System.out.println(P54);
                 SelectIdioma();
         }
     }
@@ -92,6 +92,27 @@ public class Lenguaje {
         //Perder juego infinito
         P48 = "El Resultado era: ";
 
+        //Palabras sueltas
+        P49 = "TOP 10 PUNTUACIONES DEL JUEGO NORMAL:";
+        P50 = "TOP 10 PUNTUACIONES DEL JUEGO INFINITO:";
+        P51 = "Error al guardar las puntuaciones";
+        P52 = "Tabla de puntuaciones reiniciada.";
+        P53 = "Hasta la proxima";
+        P54 = "Opcion Invalida";
+        P55 = "Seleciona la Dificultad";
+        P56 = "Que empieze el Juego";
+        P57 = "Introduce un numero aleatorio entre ";
+        P58 = " y ";
+        P59 = "Ingresa tu nombre";
+        P60 = "Numero incorecto";
+        P61 = "Numero Invalido";
+        P62 = "Numeros iguales, sumas 500 puntos";
+        P63 = "Facil";
+        P64 = "Medio";
+        P65 = "Dificil";
+        P66 = "Error de programa";
+        P67 = "No tienes permisos de administrador. Opcion denegada.";
+        P68 = "Tienes permisos de administrador. Borrando Tabla";
     }
     //English
     public static void en() {
@@ -157,5 +178,27 @@ public class Lenguaje {
         P47 = "Operation";
         //Lose infinite game
         P48 = "  The result was :";
+
+        //randoms words
+        P49 = "TOP 10 NORMAL GAME SCORES:";
+        P50 = "TOP 10 INFINITE GAME SCORES:";
+        P51 = "Error saving scores";
+        P52 = "Scoreboard reset.";
+        P53 = "See you next time";
+        P54 = "Invalid option";
+        P55 = "Select the difficulty";
+        P56 = "Let the game begin";
+        P57 = "Enter a random number between ";
+        P58 = " and ";
+        P59 = "Enter your name";
+        P60 = "Incorrect number";
+        P61 = "Invalid number";
+        P62 = "Equal numbers, you add 500 points";
+        P63 = "Easy";
+        P64 = "Medium";
+        P65 = "Hard";
+        P66 = "Program error";
+        P67 = "You do not have administrator permissions. Option denied.";
+        P68 = "You have administrator permissions. Deleting table";
     }
 }

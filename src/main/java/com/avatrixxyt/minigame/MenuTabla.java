@@ -79,7 +79,7 @@ public class MenuTabla {
                 break;
                 default://Default opcion invalida
                 {
-                    System.out.println("Opcion invalida");
+                    System.out.println(Lenguaje.P66);
                     Thread.sleep(1000);//Tiempo de pausa 1 segundo
                 }//Default opcion invalida
             }

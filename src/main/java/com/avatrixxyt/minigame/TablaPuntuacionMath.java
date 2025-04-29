@@ -35,7 +35,7 @@ public class TablaPuntuacionMath {
         try (FileWriter writer = new FileWriter(ARCHIVO_JSON_MATH)) {
             gson.toJson(puntajesMath, writer); // Escribe los puntajes de matemáticas en el archivo JSON
         } catch (IOException e) {
-            Logger.getLogger(TablaPuntuacionMath.class.getName()).log(Level.SEVERE, "Error al guardar las puntuaciones de matemáticas", e); // Muestra un error si ocurre
+            Logger.getLogger(TablaPuntuacionMath.class.getName()).log(Level.SEVERE, Lenguaje.P51, e); // Muestra un error si ocurre
         }
     }
 
@@ -52,7 +52,7 @@ public class TablaPuntuacionMath {
     }
 
     public void mostrarPuntuacionesMath() {
-        System.out.println("🏆 TOP 10 PUNTUACIONES DEL MODO INFINITO:");
+        System.out.println("🏆 "+Lenguaje.P50);
         int pos = 1;
         for (Puntaje p : puntajesMath) {
             System.out.println(pos++ + ". " + p.getJugador() + ": " + p.getPuntuacion()); // Muestra cada puntaje
@@ -64,7 +64,7 @@ public class TablaPuntuacionMath {
         try (FileWriter writer = new FileWriter(ARCHIVO_JSON_MATH)) {
             writer.write("[]"); // Escribe un array vacío en el archivo
         } catch (IOException e) {
-            Logger.getLogger(TablaPuntuacionMath.class.getName()).log(Level.SEVERE, "Error al guardar las puntuaciones de matemáticas", e); // Muestra un error si ocurre
+            Logger.getLogger(TablaPuntuacionMath.class.getName()).log(Level.SEVERE, Lenguaje.P51, e); // Muestra un error si ocurre
         }
     }
 

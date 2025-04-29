@@ -27,7 +27,7 @@ public class Main
 			{
 				case "0":
 				{
-					System.out.print("Hasta la proxima");
+					System.out.print(Lenguaje.P53);
 					return;
 				}
 				case "1":
@@ -56,7 +56,7 @@ public class Main
 				}
 			default ://Default opcion invalida
 			{
-				System.out.println("Opcion invalida");
+				System.out.println(Lenguaje.P54);
 				Thread.sleep(1000);//Tiempo de pausa 1 segundo
 			}//Default opcion invalida
 			}//Switch menu principal

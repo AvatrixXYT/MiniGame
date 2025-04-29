@@ -43,7 +43,7 @@ public class TablaPuntuacion
             gson.toJson(puntajes, writer);//Escribe los puntajes
         } catch (IOException e)
         {
-            Logger.getLogger(TablaPuntuacionMath.class.getName()).log(Level.SEVERE, "Error al guardar las puntuaciones de matemáticas", e);
+            Logger.getLogger(TablaPuntuacionMath.class.getName()).log(Level.SEVERE, Lenguaje.P51, e);
         }
     }
 
@@ -63,7 +63,7 @@ public class TablaPuntuacion
 
     public void mostrarPuntuaciones()//Muesta los puntajes en pantalla
     {
-        System.out.println("🏆 TOP 10 PUNTUACIONES DEL JUEGO NORMAL:");
+        System.out.println("🏆 "+Lenguaje.P49);
         int pos = 1;
         for (Puntaje p : puntajes) {
             System.out.println(pos++ + ". " + p.getJugador() + ": " + p.getPuntuacion());//Genera la lista asta 10
@@ -79,9 +79,9 @@ public class TablaPuntuacion
             writer.write("[]");  // Escribe un array JSON vacío
         } catch (IOException e)
         {
-            Logger.getLogger(TablaPuntuacionMath.class.getName()).log(Level.SEVERE, "Error al guardar las puntuaciones de matemáticas", e);
+            Logger.getLogger(TablaPuntuacionMath.class.getName()).log(Level.SEVERE, Lenguaje.P51, e);
         }
-        System.out.println("✅ Tabla de puntuaciones reiniciada.");
+        System.out.println("✅ "+Lenguaje.P51);
     }
     public void recargarDesdeArchivo()//Recarga la lista y tabla
     {

@@ -18,7 +18,7 @@ public class Creditos {
             {
                 return;
             } else {
-                System.out.println("Opcion invalida");
+                System.out.println(Lenguaje.P54);
                 Thread.sleep(1000);//Tiempo en pausa 1 segundo
             }
         }//Switch regresar creditos

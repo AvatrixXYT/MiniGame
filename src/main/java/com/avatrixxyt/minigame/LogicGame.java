@@ -66,22 +66,22 @@ public class LogicGame
 	{
     	if (Dificultad == 10)//Si la dificultad es facil
     	{
-    		dificultad = "Facil";
+    		dificultad = Lenguaje.P63;
     		vidasInicial = 5;//Te da 5 vidas iniciales
     	}
     	else if (Dificultad == 25)//Si la dificultad es media
 		{
-			dificultad = "Medio";
+			dificultad = Lenguaje.P64;
 			vidasInicial = 10;//Te da 10 vidas iniciales
 		}
 		else if (Dificultad == 50)//Si la dificultad dificil
 		{
-			dificultad = "Dificil";
+			dificultad = Lenguaje.P65;
 			vidasInicial = 20;//Te da 20 vidas iniciales
 		}
 		else
 		{
-			System.out.println("Error de programa");//Si el valor es incorecto es un error del sistema
+			System.out.println(Lenguaje.P66);//Si el valor es incorecto es un error del sistema
 			System.exit(3);//Salir del programa
     	}
     }
@@ -113,7 +113,7 @@ public class LogicGame
 			}
 			else//Si la dificultad no es dificil
 			{
-				System.out.println("Error de programa");//Error del programa
+				System.out.println(Lenguaje.P66);//Error del programa
 				System.exit(3);//Cierra el programa
 			}
     	}

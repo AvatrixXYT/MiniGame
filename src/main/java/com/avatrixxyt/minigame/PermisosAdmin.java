@@ -10,10 +10,10 @@ public class PermisosAdmin
 		TablaPuntuacion tabla = new TablaPuntuacion();// Agrega la bariable de la tabla de puntuacion
 		if (!tienePermisos())// Si no tienes permiso
 		{
-			System.out.println("❌ No tienes permisos de administrador. Opcion denegada.");// No puedes borrar la tabla;
+			System.out.println("❌ "+Lenguaje.P67);// No puedes borrar la tabla;
 			return;
 		} else {
-			System.out.println("✅ Tienes permisos de administrador. Borrando Tabla");// Tienes permiso
+			System.out.println("✅ "+Lenguaje.P68);// Tienes permiso
             tabla.reiniciarTabla();
         }
 	}
@@ -24,10 +24,10 @@ public class PermisosAdmin
         TablaPuntuacionMath tablaMath = new TablaPuntuacionMath();
         if (!tienePermisos())// Si no tienes permiso
         {
-            System.out.println("❌ No tienes permisos de administrador. Opcion denegada.");// No puedes borrar la tabla;
+            System.out.println("❌ "+Lenguaje.P67);// No puedes borrar la tabla;
             return;
         } else {
-            System.out.println("✅ Tienes permisos de administrador. Borrando Tabla");// Tienes permiso
+            System.out.println("✅ "+Lenguaje.P68);// Tienes permiso
             tablaMath.reiniciarTablaMath();
         }
     }
