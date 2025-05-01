@@ -1,4 +1,4 @@
-#MiniGame
+MiniGame
 ===========================================================================================
 Minigame es un juego simple creado por una sola persona en java
 Es muy simple y es facíl de entender su funcionamiento interno
