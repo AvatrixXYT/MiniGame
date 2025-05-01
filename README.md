@@ -1,4 +1,4 @@
-MiniGame
+#MiniGame
 ===========================================================================================
 Minigame es un juego simple creado por una sola persona en java
 Es muy simple y es facíl de entender su funcionamiento interno
@@ -36,6 +36,4 @@ ATT.AvatrixXYT
 -com.google.code.gson:gson:2.8.9: Genera archivos JSON y los lee
 -maven-compiler-plugin:3.8.1: Compilador de Java
 -exec-maven-plugin:3.0.0: Ejecuta el programa
--maven-jar-plugin:3.2.0: Crea el archivo JAR
-
-©Copyright-AvatrixXYT 2020-2025
+-maven-jar-plugin:3.2.0: Crea el ejecutable
