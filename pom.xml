@@ -11,7 +11,7 @@
 
     <!-- Nombre y descripción -->
     <name>MiniGame</name>
-    <description>Minijuego credo en java usando maven para adivinar el numero magico</description>
+    <description>Minijuego credo en java usando maven para adivinar el número magico</description>
 
     <!-- Configuración del modelo de compilación -->
     <properties>
