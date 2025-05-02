@@ -1,7 +1,5 @@
 package com.avatrixxyt.minigame;
 
-import com.avatrixxyt.util.Clean;
-
 import java.util.Random;
 import java.util.Scanner;
 

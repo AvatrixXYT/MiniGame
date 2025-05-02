@@ -1,12 +1,12 @@
 package com.avatrixxyt.minigame;
 
-import com.avatrixxyt.util.Clean;
+import com.avatrixxyt.util.*;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class ModosGame {
-    Clean ex = new Clean();
+    Clear ex = new Clear();
     Scanner tec = new Scanner(System.in);
     Random grn = new Random(System.currentTimeMillis()); //variable para el numero aleatorio
     public void NumeroMagico() throws InterruptedException

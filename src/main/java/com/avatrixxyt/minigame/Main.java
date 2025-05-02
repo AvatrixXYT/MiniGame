@@ -10,7 +10,7 @@ public class Main
 	public static void main(String[]args) throws InterruptedException
 	{
 		String op;//Switch del menu principal
-		Clean ex = new Clean();
+		Clear ex = new Clear();
 		Scanner tec = new Scanner(System.in);
 		TablaPuntuacion tabla = new TablaPuntuacion();//Establecer la tabla de puntuacion
 		TablaPuntuacionMath tablaMath = new TablaPuntuacionMath();

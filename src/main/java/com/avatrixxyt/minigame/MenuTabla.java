@@ -1,6 +1,6 @@
 package com.avatrixxyt.minigame;
 
-import com.avatrixxyt.util.Clean;
+import com.avatrixxyt.util.*;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ public class MenuTabla {
 
         String sdtdp;
         Scanner tec = new Scanner(System.in);
-        Clean ex = new Clean();
+        Clear ex = new Clear();
         int borrarTabla;
         int tipoTabla;
 
