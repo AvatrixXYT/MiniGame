@@ -1,39 +1,75 @@
-MiniGame
-===========================================================================================
-Minigame es un juego simple creado por una sola persona en java
-Es muy simple y es facíl de entender su funcionamiento interno
-la verdad este proyecto fue una tarea de prepa. 
+# MiniGame
+==========================================================================================
 
-La tarea era un simple juego de adivinar un número
-el umero no era aleatorio y no poseía de un menu,
-ni tablas de puntuación, aparte de estar todo en 
-una sola clase.
+**Minigame** es un juego simple creado por una sola persona en **Java**. Este proyecto fue originalmente una tarea de prepa, pero ha sido mejorado significativamente para incorporar más funcionalidades y mejor diseño.
 
-Con ayuda de internet me dispuse a mejorar la idea del juego
-usando no solo un simple packete y una clase en Eclipse
-usé maven para facilitar las dependencias y el manejo de los archivos
-aparte de poder copilar de una manera mas sencilla y poder
-agregar las dependencias nesesarias para el juego y separe
-las funciones en diferentes clases y el menu para facilitar
-la estructura del codigo y ajuste las variables con CamelCase
-y las funciones con PascalCase y agrege la depensecia Gson de google
-para poder usar archivos JSON para juardar diferentes configuraciones.
+---
 
-No sé si publique este respositorio, estoy usando Github por primera vez
-bien, antes no sabía configurarlo ni usarlo, pero ahora lo entiendo más
-empeze en este mundo esde los 12 años y hasta este momento entiendo bien
-los lenjueges y sus herramientas, la funcionalidad de github es para poder
-guardar el proyecto en la nube y poder editarlo desde todas mis computadoras,
-pero quien sabe, talvez lo publique para que la gente pueda inspirarse
-aparte de poder ser una ayuda para nuevos programadores.
+## 📋 Índice
+1. [Descripción del Proyecto](#🎮-descripción-del-proyecto)
+2. [Mejoras Realizadas](#🛠️-mejoras-realizadas)
+3. [Dependencias Utilizadas](#🚀-dependencias-utilizadas)
+4. [Notas del Autor](#🌟-notas-del-autor)
+5. [Licencia](#📄-licencia)
+6. [Contacto](#📩-contacto)
 
-Espero disfruten el juego y entiendan su funcionamiento y su programacion.
+---
 
-ATT.AvatrixXYT
+## 🎮 Descripción del Proyecto
+El proyecto comenzó como un simple juego de adivinar un número. Las limitaciones iniciales eran:
+- El número no era aleatorio.
+- No había un menú.
+- No existían tablas de puntuación.
+- Todo estaba contenido en una sola clase.
 
-=======================================Dependencias========================================
+Con el tiempo, el juego fue mejorado para incluir:
+- Uso de **Maven** para gestionar dependencias.
+- Separación de funciones en diferentes clases para una mejor organización.
+- Implementación de la convención de nombres:
+    - **CamelCase** para variables.
+    - **PascalCase** para funciones.
+- Uso de la librería **Gson** para trabajar con archivos JSON y guardar configuraciones.
 
--com.google.code.gson:gson:2.8.9: Genera archivos JSON y los lee
--maven-compiler-plugin:3.8.1: Compilador de Java
--exec-maven-plugin:3.0.0: Ejecuta el programa
--maven-jar-plugin:3.2.0: Crea el ejecutable
+---
+
+## 🛠️ Mejoras Realizadas
+1. **Reestructuración del Código**:
+    - Separación de funcionalidades en múltiples clases.
+    - Mejora de la legibilidad utilizando convenciones de nombres.
+
+2. **Uso de Maven**:
+    - Manejo eficiente de dependencias.
+    - Compilación más sencilla y organizada.
+
+3. **Añadido JSON**:
+    - Uso de la librería Gson para guardar configuraciones en archivos JSON.
+
+4. **Navegación Mejorada**:
+    - Implementación de un menú interactivo para facilitar la experiencia del usuario.
+
+---
+
+## 🚀 Dependencias Utilizadas
+- **com.google.code.gson:gson:2.8.9**: Para manejar archivos JSON.
+- **maven-compiler-plugin:3.8.1**: Compilador de Java.
+- **exec-maven-plugin:3.0.0**: Para ejecutar el programa.
+- **maven-jar-plugin:3.2.0**: Creación del archivo ejecutable (.jar).
+
+---
+
+## 🌟 Notas del Autor
+Este proyecto representa mi evolución como programador. Comencé en el mundo de la programación a los 12 años y, con el tiempo, he aprendido a usar herramientas como **GitHub** para gestionar mis proyectos. Si publico este repositorio, mi objetivo es inspirar a otros programadores y proporcionar una base para que nuevos desarrolladores puedan aprender y crecer.
+
+**ATT. AvatrixXYT**
+
+---
+
+## 📄 Licencia
+Este proyecto no tiene una licencia específica. Si decides usar parte de este código, por favor, da el crédito correspondiente.
+
+---
+
+## 📩 Contacto
+Si tienes preguntas o sugerencias, no dudes en contactarme a través de mi perfil de GitHub.
+
+---
