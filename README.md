@@ -1,5 +1,4 @@
 # MiniGame
-==========================================================================================
 
 **Minigame** es un juego simple creado por una sola persona en **Java**. Este proyecto fue originalmente una tarea de prepa, pero ha sido mejorado significativamente para incorporar más funcionalidades y mejor diseño.
 
