@@ -35,6 +35,11 @@
     		<artifactId>gson</artifactId>
    			 <version>2.13.0</version>
 		</dependency>
+        <dependency>
+            <groupId>com.avatrixxyt</groupId>
+            <artifactId>utils</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <!-- Repositorios -->
@@ -101,32 +106,6 @@
                         <goals>
                             <goal>single</goal>
                         </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.5.0</version>
-                <executions>
-                    <execution>
-                        <id>install-external</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>com.avatrixxyt</groupId>
-                                    <artifactId>Utilidades</artifactId>
-                                    <version>1.0</version>
-                                    <type>jar</type>
-                                    <destFileName>avatrixxyt-utils-v-1.0.jar</destFileName>
-                                    <outputDirectory>${project.build.directory}/main/resources</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
